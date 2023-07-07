@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links apenas</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+        }
+
+        a {
+            color: red;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: green;
+        }
+
+        a:hover {
+            color: black;
+            text-decoration: underline;
+        }
+        
+        a:active {
+            color: aqua;
+        }
+
+        .especial::after {
+            content: '⍟'
+        }
+
+        .especial::before {
+            content: '⍟';
+        }
+    </style>
+</head>
+<body>
+    <h1>Alguns links</h1>
+    <ul>
+        <li><a href="https://www.youtube.com" target="_blank">YouTube</a></li>
+        <li><a href="https://cryskawaii.github.io/Crys-Dev/" target="_blank" class="especial">Podium</a></li>
+        <li><a href="https://github.com/CrysKawaii" target="_blank">GitHub</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formus</title>
+</head>
+<body>
+    <pre>
+        <code>
+&lt;h1&gt;Mais formu&lt;/h1&gt;
+&lt;form action="cadastro.php"&gt;
+    &lt;p&gt;
+        &lt;label for="n1"&gt;Número 1:&lt;/label&gt;
+        &lt;input type="number" name="n1" id="idn1" required oninput="idsoma.innerHTML = Number(idn1.value) + Number(idn2.value)"&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;label for="n2"&gt;Número 2:&lt;/label&gt;
+        &lt;input type="number" name="n2" id="idn2" required oninput="idsoma.innerHTML = Number(idn1.value) + Number(idn2.value)"&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;label for="idsoma"&gt;Soma:&lt;/label&gt;
+        &lt;output id="idsoma"&gt;0&lt;/output&gt;
+    &lt;/p&gt;
+    &lt;input type="submit" value="Enviar"&gt;
+    &lt;input type="reset" value="Limpar"&gt;
+&lt;/form&gt;
+        </code>
+    </pre>
+</body>
+</html>

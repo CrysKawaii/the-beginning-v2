@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>Primeiros passos HTML</title>
+    <style>
+        @media screen and (min-width: 100px) and (max-width: 480px) {
+            header {
+                font-size: 50%;
+            }
+            
+            .codigos {
+                font-size: 5%;
+            }
+
+            pre {
+                overflow: auto;
+            }
+        }
+
+        @media screen and (min-width: 480px) and (max-width: 622px) {
+            header {
+                font-size: 50%;
+            }
+
+            .codigos {
+                font-size: 49%;
+            }
+        }
+
+        @media screen and (min-width: 622px) and (max-width: 922px) {
+            header {
+                font-size: 50%;
+            }
+
+            .codigos {
+                font-size: 60%;
+            }
+        }
+
+        @media screen and (min-width: 922px) and (max-width: 1024px) {
+            .codigos {
+                font-size: 76%;
+            }
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1366px) {
+            .codigos {
+                font-size: 80%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header id="cabecalho_passos_html">
+        <a href="../../semboot.html"><img id="seta" src="https://i.pinimg.com/originals/69/f3/a1/69f3a1814bae7a531d75722d21498a77.png" alt="Imagem de Voltar"></a>
+        <h1 id="titulo">Começando a Desenvolver</h1>
+    </header>
+    <nav id="barra_navegacao">
+        <a href="../../semboot.html">Home</a>
+        <a href="primeiros-passos-html.html">HTML</a>
+        <a href="primeiros-passos-css.html">CSS</a>
+    </nav>
+    <main>
+        <div class="codigos">
+            <h2>Meu Primeiro Código</h2>
+            <pre>
+                <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Meu site&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Olá, Mundo!&lt;/h1&gt;
+    &lt;hr&gt;
+    &lt;p&gt;Este é meu primeiro site, do curso de HTML e CSS com o professor Guanabara&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code>
+            </pre>
+            <div class="botoes"><a class="botoes_de_execucao" href="../pasta-com-exercicios/exercicios/ex001/index.html" target="_blank">Execute o código aqui</a></div>
+        </div>
+        <div class="codigos">
+            <h2>Avançando na Linguagem</h2>
+            <p>Aqui eu já vejo um pouco sobre formatação de textos: </p>
+            <pre>
+                <code>
+&lt;body&gt;
+    &lt;h1&gt;Quebras de linha, parágrafos e mais!&lt;/h1&gt;
+    &lt;hr&gt;
+    &lt;p&gt;Isso aqui é um parágrafo, para fazer um parágrafo usa-se
+    o par de tags &amp;lt;p&amp;gt; e &amp;lt;/p&amp;gt;&lt;/p&gt; <!-- LESS THAN / GREATTER THAN-->
+    &lt;p&gt;Eu também posso quebras a linha quando eu quiser, tipo agora &lt;br&gt; usando a tag &amp;lt;br&amp;gt;&lt;/p&gt;
+    &lt;p&gt;Vamos usar alguns símbolos especiais:
+        &amp;copy;
+        &amp;uarr;
+        &amp;trade;
+        &amp;euro;
+        &amp;yen;
+        &amp;cent;
+    &lt;/p&gt;
+    &lt;p&gt;E também posso colocar alguns emojis:
+        &amp;#x270C;
+        &amp;#x1FAF6;
+    &lt;/p&gt;
+&lt;/body&gt;
+                </code>
+            </pre>
+            <p>OBS: Os caracteres &amp;lt; e &amp;gt; são caracteres que servem para escrever o símbolo de abrir e fechar a tag (&lt; e &gt;), preferi deixar eles para mostrar o código fonte mesmo.</p>
+            <div class="botoes"><a class="botoes_de_execucao" href="pasta-com-exercicios/exercicios/ex002/index.html" target="_blank">Execute o código aqui</a></div>
+        </div>
+        <div class="codigos">
+            <h2>Colocando Imagens em Sites</h2>
+            <pre>
+                <code>
+&lt;body&gt;
+    &lt;h1&gt;Carregamento de imagens com diferentes caminhos&lt;/h1&gt;
+    &lt;hr&gt;
+    &lt;p&gt;Esta é uma imagem que está no mesmo local do arquivo index:&lt;/p&gt;
+    &lt;img src="curso-html-600.jpg" alt="Imagem de anime"&gt;
+    &lt;p&gt;Esta é uma imagem que está em uma sub-pasta:&lt;/p&gt;
+    &lt;img src="images/curso-html2-400.png" alt="Imagem de anime com fundo transparente"&gt;
+    &lt;p&gt;Esta é uma imagem que foi pega diretamente de um link da internet:&lt;/p&gt;
+    &lt;img src="https://i1.sndcdn.com/avatars-0QCRofC3yRV0mkpa-6XQLMA-t500x500.jpg"
+    alt="Imagem de anime com link da net"&gt;
+&lt;/body&gt;
+                </code>
+            </pre>
+            <div class="botoes">
+                <a class="botoes_de_execucao" href="pasta-com-exercicios/exercicios/ex003/index.html"  target="_blank">Execute o código aqui</a>
+                <p>Faça o download das imagens clicando <a class="botoes_de_download" href="pasta-com-exercicios/exercicios/ex003/images/curso-html2-400.png" download="curso-html2-400.png" type="image/png">aqui</a> <a class="botoes_de_download" href="pasta-com-exercicios/exercicios/ex003/curso-html-600.jpg" download="curso-html-600.jpg" type="image/jpg">aqui</a></p>
+            </div>
+        </div>
+        <div class="codigos">
+            <h2>Inserindo o Favicon</h2>
+            <pre>
+                <code>
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;link rel="shortcut icon" href="favicon.ico" type="image/x-icon"&gt;
+    &lt;title&gt;Olha o ícone aqui do lado&lt;/title&gt;
+&lt;/head&gt;
+                </code>
+            </pre>
+            <div class="botoes">
+                <a class="botoes_de_execucao" href="pasta-com-exercicios/exercicios/ex004/index.html" target="_blank">Execute o código aqui</a>
+                <p>Faça o download do favicon <a class="botoes_de_download" href="pasta-com-exercicios/exercicios/ex004/favicon.ico" download="favicon.ico" type="image/ico">aqui</a></p>
+            </div>
+        </div>
+        <div class="codigos">
+            <h2>Hierarquia de Títulos na Prática</h2>
+            <pre>
+                <code>
+&lt;body&gt;
+    &lt;h1&gt;Planeta Terra&lt;/h1&gt;
+    &lt;h2&gt;Continentes&lt;/h2&gt;
+    &lt;p&gt;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error maxime nostrum voluptate
+    eos saepe sapiente, qui corporis doloribus ab natus. Quasi mollitia, vero fugiat voluptate
+    consequuntur repellat ea laudantium eligendi!&lt;/p&gt;
+    &lt;h3&gt;Américas&lt;/h3&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident odio praesentium
+    autem reiciendis dolores illum expedita inventore deserunt impedit neque vitae quas itaque
+    nemo quia ducimus esse, magnam saepe animi!&lt;/p&gt;
+    &lt;h4&gt;América do Sul&lt;/h4&gt;
+    &lt;p&gt;Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste aliquid accusamus ex
+    consectetur blanditiis aut, molestiae quibusdam recusandae illum similique ducimus fugit quia,
+    quae aperiam quasi nesciunt tempore soluta rem.&lt;/p&gt;
+    &lt;h5&gt;Brasil&lt;/h5&gt;
+    &lt;p&gt;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem fugiat possimus ad,
+    sunt eum minima at eaque ab quos cum, odit incidunt delectus sed aperiam reprehenderit sequi
+    vitae explicabo mollitia.&lt;/p&gt;
+    &lt;h6&gt;Rio Pardo de Minas Gerais&lt;/h6&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem odio ducimus sequi porro,
+    enim aspernatur ipsam aliquid, natus, reprehenderit consequatur tempore! Necessitatibus dicta
+    impedit autem hic, atque vitae in nobis!&lt;/p&gt;
+&lt;/body&gt;
+                </code>
+            </pre>
+            <div class="botoes"><a class="botoes_de_execucao" href="pasta-com-exercicios/exercicios/ex005/index.html" target="_blank">Execute o código aqui</a></div>
+        </div>
+        <div class="codigos">
+            <h2>Algumas Formatações de Textos</h2>
+            <pre>
+                <code>
+&lt;body&gt;
+    &lt;h1&gt;Principais formatações&lt;/h1&gt;
+    &lt;h2&gt;Negrito / Destaque&lt;/h2&gt;
+    &lt;p&gt;Nesta frase temos um &lt;b&gt; termo em negrito&lt;/b&gt; usando a tag B (não semântica).
+    &lt;/p&gt;
+    &lt;p&gt;Nesta frase, tenho um &lt;strong&gt;termo em destaque&lt;/strong&gt; usando a tag
+    STRONG (semântica).&lt;/p&gt;
+    &lt;h2&gt;Itálico / Ênfase&lt;/h2&gt;
+    &lt;p&gt;Nesta frase, temos um &lt;i&gt;termo em itálico&lt;/i&gt; usando a tag I (não semântica).&lt;/p&gt;
+    &lt;p&gt;Nesta frase, temos um &lt;em&gt;termo em ênfase&lt;/em&gt; usando a tag EM (semântica).&lt;/p&gt;
+    &lt;h2&gt;Texto marcado&lt;/h2&gt;
+    &lt;p&gt;Podemos criar também &lt;mark>um texto marcado&lt;/mark&gt; usando a tag MARK.&lt;/p&gt;
+    &lt;p&gt;E no outro parágrafo, temos &lt;mark>outro texto marcado&lt;/mark&gt; no final.&lt;/p&gt;
+    &lt;h2&gt;Texto grande e pequeno&lt;/h2&gt;
+    &lt;p&gt;Estamos criando um &lt;big>texto grande&lt;/big&gt; e um &lt;small&gt;texto pequeno&lt;/small&gt;
+    nesse parágrafo&lt;/p&gt;
+    &lt;h2&gt;Texto deletado&lt;/h2&gt;
+    &lt;p&gt;Podemos marcar &lt;del&gt;um texto como excluído&lt;/del&gt; para indicar que ele deve ser
+    lido, mas não considerado.&lt;/p&gt;
+    &lt;h2&gt;Texto inserido&lt;/h2&gt;
+    &lt;p&gt;Podemos marcar &lt;ins&gt;um texto como inserido&lt;/ins&gt; para dar uma ênfase e indicar que ele foi
+    adicionado depois&lt;/p&gt;
+    &lt;p&gt;Existe também o &lt;u>sublinhado&lt;/u&gt; com a tag U (não semântica).&lt;/p&gt;
+    &lt;h2&gt;Texto sobrescrito&lt;/h2&gt;
+    &lt;p&gt;Para inserir coisas do tipo x&lt;sup&gt;20&lt;/sup&gt;+3&lt;/p&gt;
+    &lt;h2&gt;Texto subscrito&lt;/h2&gt;
+    &lt;p&gt;Para inserir coisas do tipo H&lt;sub&gt;2</sub>O&lt;/p&gt;
+&lt;/body&gt;
+                </code>
+            </pre>
+            <div class="botoes"><a class="botoes_de_execucao" href="pasta-com-exercicios/exercicios/ex006/index.html" target="_blank">Execute o código aqui</a></div>
+        </div>
+        <div class="codigos">
+            <h2>Apredendo a Fazer Listas</h2>
+            <pre>
+                <code>
+&lt;body&gt;
+    &lt;h1&gt;Meus jogos favoritos&lt;/h1&gt;
+    &lt;ul&gt; <!-- disc circle square-->
+        &lt;li&gt;Nintendo&lt;/li&gt;
+        &lt;ol&gt; <!-- 1 A a I i-->
+            &lt;li&gt;Mario Bros&lt;/li&gt;
+            &lt;ul type="square"&gt;
+                &lt;li&gt;Super Mario Bros 3&lt;/li&gt;
+                &lt;li&gt;Mario: Lost Levels&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;li&gt;Ninja Gaiden&lt;/li&gt;
+            &lt;ul type="square"&gt;
+                &lt;li&gt;Ninja Gaiden III&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/ol&gt;
+        &lt;li&gt;Super Nintendo&lt;/li&gt;
+        &lt;ol&gt;
+            &lt;li&gt;Super Mario World&lt;/li&gt;
+            &lt;li&gt;Donkey Kong&lt;/li&gt;
+            &lt;ul type="square"&gt;
+                &lt;li&gt;Donkey Kong Country III&lt;/li&gt;
+                &lt;li&gt;Diddy's kong Quest&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/ol&gt;
+        &lt;li>Playstation 1&lt;/li&gt;
+        &lt;ol&gt;
+            &lt;li&gt;Final Fantasy&lt;/li&gt;
+            &lt;ul type="square"&gt;
+                &lt;li&gt;Final Fantasy VII&lt;/li&gt;
+                &lt;li&gt;Final Fantasy IX&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;li&gt;Castlevania&lt;/li&gt;
+            &lt;ul type="square"&gt;
+                &lt;li&gt;Simphony of the Night&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/ol&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+                </code>
+            </pre>
+            <div class="botoes"><a class="botoes_de_execucao" href="pasta-com-exercicios/exercicios/ex009/index.html" target="_blank">Execute o código aqui</a></div>
+        </div>
+        <div class="codigos">
+            <h2>Imagens Adaptativas e Aúdio no Site</h2>
+            <pre>
+                <code>
+&lt;body&gt;
+    &lt;h1&gt;Tipos diferentes de imagem&lt;/h1&gt;
+    &lt;p&gt;A imagem a seguir se adapta aos diferentes tipos de telas que podem vir a aparecer&lt;/p&gt;
+    &lt;picture&gt;
+        &lt;source media="(max-width: 750px)" srcset="images/foto-p.png" type="image/png"&gt;
+        &lt;source media="(max-width: 1050px)" srcset="images/foto-m.png" type="image/png"&gt;
+        &lt;img src="images/foto-g.png" alt="Imagem de tamanho G"&gt;
+    &lt;/picture&gt;
+    &lt;h2&gt;Agora vou reproduzir um áudio&lt;/h2&gt;
+    &lt;audio preload="metadata" src="sounds/Spirit Riders - Telecasted.mp3" controls>&lt;/audio&gt;
+&lt;/body&gt;
+                </code>
+            </pre>
+            <p>Faça o download das imagens clicando <a class="botoes_de_download" href="pasta-com-exercicios/exercicios/ex011/images/foto-g.png" download="foto-g.png" type="image/png">aqui</a> <a class="botoes_de_download" href="pasta-com-exercicios/exercicios/ex011/images/foto-m.png" download="foto-m.png" type="image/png">aqui</a> <a class="botoes_de_download" href="pasta-com-exercicios/exercicios/ex011/images/foto-p.png" download="foto-p.png" type="image/png">aqui</a> </p>
+            <div class="paragrafos">
+                <a class="botoes_de_execucao" href="pasta-com-exercicios/exercicios/ex011/index.html" target="_blank">Execute o código aqui</a>
+                <p>Link para download do áudio <a class="botoes_de_download" href="pasta-com-exercicios/exercicios/ex011/sounds/Spirit Riders - Telecasted.mp3" download="Spirit Riders - Telecasted.mp3" type="application/mp3">aqui</a></p>
+            </div>
+        </div>
+        <div class="codigos">
+            <h2>Colocando Vídeos</h2>
+            <pre>
+                <code>
+&lt;body&gt;
+    &lt;h1&gt;Colocando vídeos&lt;/h1&gt;
+    &lt;video controls width="500px" height="400px">
+        &lt;source src="midias/video-teste.mp4" type="video/mp4"&gt;
+        &lt;source src="midias/video-teste.mkv" type="video/mp4"&gt;
+        &lt;source src="midias/video-teste.webm" type="video/webm"&gt;
+        &lt;p>Sinto muito, mas seu navegador não é compatível com o vídeo.&lt;/p&gt;
+    &lt;/video&gt;
+    &lt;h1&gt;Colocando vídeo do YouTube&lt;/h1&gt;
+    &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/3hng-hmSv2Y"
+    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+    clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>&lt;/iframe&gt;
+    &lt;h1&gt;Colocando vídeos do Vimeo&lt;/h1&gt;
+    &lt;iframe src="https://player.vimeo.com/video/149124755?h=8c1b7e7880&title=0&portrait=0"
+    width="500" height="281" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen>&lt;/iframe&gt;
+&lt;/body&gt;
+                </code>
+            </pre>
+            <div class="botoes">
+                <a class="botoes_de_execucao" href="pasta-com-exercicios/exercicios/ex012/index.html" target="_blank">Execute o código aqui</a>
+                <p>Faça o download do vídeo <a class="botoes_de_download" href="pasta-com-exercicios/exercicios/ex012/midias/video-teste.mp4" download="video-teste.mp4" type="video/mp4">aqui</a></p>
+            </div>
+        </div>
+        <div class="codigos">
+            <h2>Navegação entre Páginas e Links de Download</h2>
+            <pre>
+                <code>
+&lt;body&gt;
+    &lt;h1&gt;Este é um site de vários direcionamentos&lt;/h1&gt;
+    &lt;p&gt;Esta linha te leva a &lt;a href="pag2.html" rel="next">segunda página&lt;/a&gt;&lt;/p&gt;
+    &lt;p>Esta linha te leva a &lt;a href="pag3.html" rel="next">terceira página&lt;/a>&lt;/p&gt;
+    &lt;p>Esta linha te leva a um site externo, o &lt;a href="https://github.com/CrysKawaii"
+        target="_blank">meu github&lt;/a&gt;&lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2&gt;Links de download&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="images/zero-two-02.gif" download="zero-two-02.gif"
+        type="image/gif">Gif da Zero Two&lt;/a&gt;&lt;/li&gt;
+        &lt;li>&lt;a href="images/curso-html2-400.png" download="curso-html2-400.png"
+            type="image/png">Imagem de anime de uma mina&lt;/a&gt;>&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+                </code>
+            </pre>
+            <div class="botoes"><a class="botoes_de_execucao" href="pasta-com-exercicios/exercicios/extra01/index.html" target="_blank">Execute o código aqui</a></div>
+        </div>
+        <div class="codigos">
+            <h2>Iframes</h2>
+            <pre>
+                <code>
+&lt;body&gt;
+    &lt;h1&gt;Vários iframes&lt;/h1&gt;
+    &lt;h2&gt;Vídeo do vimeo&lt;/h2&gt;
+    &lt;div style="padding:56.25% 0 0 0;position:relative;"&gt;
+    &lt;iframe src="https://player.vimeo.com/video/32
+    4214320?h=21f710ff46&title=0&byline=0&portrait=0" 
+    style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+    frameborder="0" allow="autoplay; fullscreen; picture-in-picture" 
+    allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;script 
+    src="https://player.vimeo.com/api/player.js"&gt;&lt;/script&gt;
+    &lt;h2&gt;Mapa do google maps&lt;/h2&gt;
+    &lt;iframe src="https://www.google.com/maps/embed?pb=!1
+    m18!1m12!1m3!1d2095.1645255708713!
+    2d-42.54645563766977!3d-15.615727028470705!2m3!1f0!2f0!3f0!3m2
+    !1i1024!2i768!4f13.1!3m3!1m2!1s0x74e1fd3bad8f793%3A0x719532a0
+    7055a682!2sPrefeitura%
+    20Municipal%20de%20Rio%20Pardo%20
+    de%20Minas!5e0!3m2!1spt-BR!2sbr!4v1683035399857!5m2!1spt-BR!2sbr"
+     width="600" height="450" style="border:0;" allowfullscreen="" 
+     loading="lazy" referrerpolicy="no-referrer-when-downgrade"&gt;&lt;/iframe&gt;
+    &lt;h2&gt;Mapa do Waze&lt;/h2&gt;
+    &lt;iframe src="https://embed.waze.com/iframe?zoom=17&lat=-15.621506&lon=-42.545477&ct=livemap" 
+    width="600" height="450" allowfullscreen>&lt;/iframe&gt;
+&lt;/body&gt;
+                </code>
+            </pre>
+            <div class="botoes"><a class="botoes_de_execucao" href="../pasta-com-exercicios/exercicios/ex024/frame3.html">Executar código</a></div>
+        </div>
+        <div class="codigos">
+            <h2>Formulários</h2>
+            <div class="navbar">
+                <a href="../../codes/formularios/formulario.html" target="frame">form1</a>
+                <a href="../../codes/formularios/formulario2.html" target="frame">form2</a>
+                <a href="../../codes/formularios/formulario3.html" target="frame">form3</a>
+                <a href="../../codes/formularios/formulario4.html" target="frame">form4</a>
+                <a href="../../codes/formularios/formulario5.html" target="frame">form5</a>
+                <a href="../../codes/formularios/formulario6.html" target="frame">form6</a>
+                <a href="../../codes/formularios/formulario7.html" target="frame">form7</a>
+                <a href="../../codes/formularios/formulario8.html" target="frame">form8</a>
+                <a href="../../codes/formularios/formulario9.html" target="frame">form9</a>
+                <a href="../../codes/formularios/formulario10.html" target="frame">form10</a>
+            </div>
+           <div class="quadros">
+            <iframe src="../../codes/formularios/formulario.html" frameborder="0" name="frame"></iframe>
+           </div>
+           <div class="botoes">
+            <a class="botoes_de_execucao" href="../../pasta-com-exercicios/exercicios/ex025/formulario.html">Executar código</a>
+           </div>
+        </div>
+    </main>
+    <footer class="rodape">
+        <p>Desenvolvido por Crysnanth</p>
+    </footer>
+</body>
+</html>

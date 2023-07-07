@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'mk-4';
+    src: url('../fonts/mk4.ttf');
+}
+
+@font-face {
+    font-family: 'mk-5';
+    src: url('../fonts/mk5style.ttf');
+}
+
+@media screen and (max-width: 710px) {
+    .links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img {
+        display: block;
+    }
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'mk-5';
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+
+#fundo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.89;
+}
+
+h1 {
+    font-family: 'mk-4';
+    position: relative;
+    z-index: 2;
+}
+
+#imagem-escolha {
+    min-width: 140px;
+    min-height: 10px;
+}
+
+.links > img {
+    width: 32px;
+    height: 32px;
+}
+
+.icones-mk {
+    display: none;
+}
+
+.links:hover > .icones-mk {
+    display: inline;
+}
+
+.blink {
+    animation: blink-animation 0.3s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+        color: red;
+    }
+}

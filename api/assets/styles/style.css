@@ -1,0 +1,274 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cor-primaria: #251749;
+    --cor-secundaria: #263159;
+    --cor-terciaria: #495579;
+    --cor-de-fundo: #FFFBEB;
+
+}
+
+html, body {
+    background-color: var(--cor-de-fundo);
+    /* height: 100vh;
+    width: 100vw; */
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor-secundaria), var(--cor-primaria));
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* min-width: 100vw; */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.289);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1 {
+    font-size: 350%;
+}
+
+
+main#pagina_index {
+    background-color: white;
+    padding: 30px;
+    width: 50vw;
+    min-width: 80vw;
+    margin: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.13);
+}
+
+header p {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+div#lista_de_projetos {
+    text-align: center;
+    font-size: 140%;
+    line-height: 50px;
+    columns: 2;
+}
+
+ul {
+    list-style-position: inside;
+    list-style: none;
+}
+
+ul a {
+    text-decoration: none;
+    color: var(--cor-secundaria);
+}
+
+/* ul a::after {
+    content: '\00A0\1F517';
+} */
+
+ul a:hover {
+    text-decoration: underline;
+}
+
+footer#peindex {
+    position: absolute;
+    bottom: 3.4%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background-color: var(--cor-secundaria);
+    color: white;
+    text-align: center;
+    min-width: 100vw;
+    padding-top: 10px;
+    padding-bottom: 10.2px;
+}
+
+/* ESTILO PARA A PÁGINA DE PASSOS HTML */
+
+#cabecalho_passos_html {
+    display: flex;
+}
+
+img#seta {
+    width: 10vw
+}
+
+h1#titulo {
+   margin: auto;
+}
+
+nav#barra_navegacao {
+    background-color: var(--cor-primaria);
+    padding-top: 9px;
+    padding-bottom: 9px;
+    display: flex;
+    justify-content: space-around;
+    /* min-width: 100vw; */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+nav#barra_navegacao > a {
+    text-decoration: none;
+    color: white;
+    border-radius: 7px;
+    font-size: 130%;
+    transition-duration: 0.4s;
+    padding: 8px;
+}
+
+nav#barra_navegacao > a:hover {
+    background-color: var(--cor-secundaria);
+}
+
+.codigos {
+    background-color: white;
+    /* font-size: 110%; */
+    padding: 20px;
+    width: 61vw;
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.201);
+}
+
+.codigos > h2 {
+    text-align: center;
+    background-color: var(--cor-terciaria);
+    color: white;
+    padding: 5px;
+    margin: -20px -20px 0px -20px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-top: 10px;
+}
+
+.paragrafos {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.botoes_de_execucao {
+    color: rgb(72, 152, 72);
+    border: 2px solid var(--cor-primaria);
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+    transition-duration: 0.3s;
+}
+
+.botoes_de_execucao:hover {
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: 10px;
+}
+
+.botoes_de_execucao::after {
+    content: '\00A0\25B6';
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+.botoes_de_download {
+    text-decoration: none;
+    color: var(--cor-terciaria);
+    border-bottom: 2px solid var(--cor-primaria);
+    border-radius: 5px;
+    padding-right: 5px;
+    padding-left: 9px;
+    margin-left: 10px;
+    transition-duration: 0.3s;
+}
+
+.botoes_de_download:hover {
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding-top: 7px;
+    padding-bottom: 5px;
+
+}
+
+.botoes_de_download::after {
+    content: '\00A0\2B07';
+}
+
+
+.rodape {
+    background-color: var(--cor-secundaria);
+    color: white;
+    text-align: center;
+    /* min-width: 100vw; */
+    /* min-width: 600px; */
+    padding-top: 10px;
+    padding-bottom: 10.2px;
+}
+/* ////////////////////////////////////////////// ESTILIZAÇÃO PASSOS CSS */
+
+.quadros {
+    position: relative;
+    padding: 40% 0 0 0 ;
+}
+
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+ /* Estilo para a barra de navegação */
+ .navbar {
+    overflow: hidden;
+    background-color: var(--cor-terciaria);
+    margin: 0px -20px 0px -20px;
+    font-family: Arial;
+  }
+  
+  /* Estilo para os links da barra de navegação */
+  .navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition-duration: 0.3s;
+  }
+  
+  /* Estilo para o link ativo (página atual) */
+  .navbar a.active {
+    text-decoration: underline;
+  }
+  
+  /* Estilo para o link quando o mouse passa por cima */
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Estilo para o conteúdo */
+  .content {
+    display: none;
+    padding: 20px;
+  }
+  
+  /* Estilo para o conteúdo ativo */
+  .content.active {
+    display: block;
+  }

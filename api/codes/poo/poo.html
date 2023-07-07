@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../assets/styles/style-php.css">
+    <title>Primeiros passos POO</title>
+    <style>
+
+        @media screen and (max-width: 500px) {
+            #verticallinks {
+                display: none;
+            }
+
+            header {
+                position: sticky;
+                top: 0;
+                min-width: 300px;
+            }
+
+            main {
+                min-width: 300px;
+            }
+
+            footer {
+                min-width: 300px;
+            }
+        }
+
+        @media screen and (min-width: 500px) and (max-width: 768px) {
+            #verticallinks {
+                display: none;
+            }
+
+            main {
+                min-width: 450px;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            #horizontallinks {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+<body class="h-100" style="background-color: #313131;">
+
+    <header class="text-white text-center p-2 mb-3 d-flex" style="position: sticky; top: 0; background-color: #8993C1;">
+        <a class="align-self-center text-white" href="../../php.php" style="font-size: 30px;"><i class="fa-solid fa-backward"></i></a>
+        <h1 class="display-4 m-auto">Orientação a Objetos</h1>
+        <div class="nav-item dropdown text-light p-2" id="horizontallinks">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+                <li>
+                    <a class="dropdown-item" href="#primeirosite">Instaciamento</a>
+                </li>
+                    <li>
+                    <a class="dropdown-item" href="#avancando">Encapsulamento</a>
+                </li>
+                    <li>
+                    <a class="dropdown-item" href="#imagenssites">Getters/Setters</a>
+                </li>
+                    <li>
+                    <a class="dropdown-item" href="#favicon">Interface</a>
+                </li>
+                    <li>
+                    <a class="dropdown-item" href="#titulos">Agregação</a>
+                </li>
+                    <li>
+                    <a class="dropdown-item" href="#formata">Herança</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#poli">Polimorfismo</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div id="verticallinks" class="p-2 position-fixed">
+        <h4 class="text-light border-bottom p-1">Nesta página</h4>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#primeirosestilos">Instaciamento</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#estilosinter">Encapsulamento</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#estilosexter">Getter/Setters</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#variosestilos">Interface</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#fontesdiferentes">Agregação</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#fontesexter">Herança</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#poli">Polimorfismo</a>
+            </li>
+          </ul>
+    </div>
+
+    <main class="m-auto w-50 text-white">
+        <div class="container-fluid">
+            <h2 class="titulocaixa bg-white text-black display-6 m-0 p-2 border border-secondary rounded-top-1" id="primeirosestilos">Instaciamento</h2>
+            <div class="sub bg-white text-black p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy1" class="rounded-2 p-1 text-black">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo bg-white p-2 text-black rounded-bottom-1 border border-secondary">
+
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active text-black" id="pills-caneta1-tab" data-bs-toggle="pill" data-bs-target="#pills-caneta1" type="button" role="tab" aria-controls="pills-caneta1" aria-selected="true">Caneta.php</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link text-black" id="pills-index1-tab" data-bs-toggle="pill" data-bs-target="#pills-index1" type="button" role="tab" aria-controls="pills-index1" aria-selected="false">index.php</button>
+                    </li>
+                  </ul>
+
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-caneta1" role="tabpanel" aria-labelledby="pills-caneta1-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php 
+        class Caneta {
+            var $cor;
+            var $modelo;
+            var $ponta;
+            var $carga;
+            var $tampada;
+        
+            function rabiscar() {
+                // $this é referente ao objeto, ou seja, $this == $caneta1;
+                if ($this -> tampada) {
+                    echo "A caneta está tampada, por favor tire a tampa dela";
+                }
+                else {
+                    echo "Estou fazendo rabiscos :)";
+                }
+            }
+        
+            function tampar() {
+                $this -> tampada = true;
+            }
+        
+            function destampar() {
+                $this -> tampada = false;
+            }
+        }
+    ?&gt;
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="tab-pane fade" id="pills-index1" role="tabpanel" aria-labelledby="pills-index1-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php 
+        include 'Caneta.php';
+        include 'Notebook.php';
+
+        $caneta1 = new Caneta;
+
+        $caneta1 -> cor = 'Azul';
+        $caneta1 -> modelo = 2020;
+        $caneta1 -> ponta = 0.5;
+        $caneta1 -> carga = 50;
+        $caneta1 -> destampar();
+        $caneta1 -> rabiscar();
+        ?>
+    &lt;pre>
+        &lt;?= var_dump($caneta1) ?>
+    &lt;/pre>
+    &lt;br>
+    &lt;?php 
+        $caneta2 = new Caneta;
+
+        $caneta2 -> cor = 'Preta';
+        $caneta2 -> modelo = 2021;
+        $caneta2 -> ponta = 0.7;
+        $caneta2 -> carga = 80;
+        $caneta2 -> tampar();
+        $caneta2 -> rabiscar();
+    ?>
+    &lt;pre>
+        &lt;?= var_dump($caneta2) ?>
+    &lt;/pre>
+    &lt;?php 
+        $note1 = new Notebook;
+
+        $note1 -> cor = 'Prateado';
+        $note1 -> tela = 'Full HD';
+        $note1 -> processador = 'I5';
+        $note1 -> memoria_ram = 8;
+        $note1 -> armazenamento = 128;
+        $note1 -> ligar();
+    ?>
+    &lt;pre>
+        &lt;?= var_dump($note1) ?>
+    &lt;/pre>
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="#" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa bg-white text-black display-6 m-0 p-2 border border-secondary rounded-top-1" id="estilosinter">Visibilidade ( Encapsulamento )</h2>
+            <div class="sub bg-white text-black p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy2" class="rounded-2 p-1 text-black">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo bg-white text-black p-2 rounded-bottom-1 border border-secondary">
+
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active text-black" id="pills-caneta2-tab" data-bs-toggle="pill" data-bs-target="#pills-caneta2" type="button" role="tab" aria-controls="pills-caneta2" aria-selected="true">Caneta.php</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link text-black" id="pills-index2-tab" data-bs-toggle="pill" data-bs-target="#pills-index2" type="button" role="tab" aria-controls="pills-index2" aria-selected="false">index.php</button>
+                    </li>
+                  </ul>
+
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-caneta2" role="tabpanel" aria-labelledby="pills-caneta2-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php
+        class Caneta {
+            public $cor;
+            public $modelo;
+            private $ponta;
+            protected $carga;
+            protected $tampada;
+        
+            public function rabiscar() {
+                // $this é referente ao objeto, ou seja, $this == $caneta1;
+                if ($this -> tampada) {
+                    echo "A caneta está tampada, por favor tire a tampa dela";
+                }
+                else {
+                    echo "Estou fazendo rabiscos :)";
+                }
+            }
+            
+            public function tampar() {
+                $this -> tampada = true;
+            }
+        
+            public function destampar() {
+                $this -> tampada = false;
+            }
+        }
+    ?&gt;
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="tab-pane fade" id="pills-index2" role="tabpanel" aria-labelledby="pills-index2-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php 
+        include 'Caneta.php';
+
+        $caneta3 = new Caneta;
+
+        $caneta3 -> modelo = 'BIC';
+        $caneta3 -> cor = 'Azul';
+        //$caneta3 -> ponta = 0.5;
+        //$caneta3 -> carga = 50;
+        $caneta3 -> tampar();
+    ?>
+    &lt;pre>
+        &lt;?= var_dump($caneta3) ?>
+    &lt;/pre>
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="#" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa bg-white text-black display-6 m-0 p-2 border border-secondary rounded-top-1" id="estilosexter">Getters e Setters</h2>
+            <div class="sub bg-white text-black p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy3" class="rounded-2 p-1 bg-white text-black">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo bg-white text-black p-2 rounded-bottom-1 border border-secondary">
+
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active text-black" id="pills-caneta3-tab" data-bs-toggle="pill" data-bs-target="#pills-caneta3" type="button" role="tab" aria-controls="pills-caneta3" aria-selected="true">Caneta.php</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link text-black" id="pills-index3-tab" data-bs-toggle="pill" data-bs-target="#pills-index3" type="button" role="tab" aria-controls="pills-index3" aria-selected="false">index.php</button>
+                    </li>
+                  </ul>
+
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-caneta3" role="tabpanel" aria-labelledby="pills-caneta3-tab" tabindex="0">
+                        <pre>
+                            <code>
+            &lt;?php
+                class Caneta {
+                    private $cor;
+                    private $modelo;
+                    private $ponta;
+                    protected $carga;
+                    protected $tampada;
+                    public function __construct($m, $c, $p, $ca)
+                    {
+                        $this -> setModelo($m);
+                        $this -> setCor($c);
+                        $this -> setPonta($p);
+                        $this -> setCarga($ca);
+                        $this -> tampar();
+                    }
+            
+                    public function rabiscar() {
+                        // $this é referente ao objeto, ou seja, $this == $caneta1;
+                        if ($this -> tampada) {
+                            echo "A caneta está tampada, por favor tire a tampa dela";
+                        }
+                        else {
+                            echo "Estou fazendo rabiscos :)";
+                        }
+                    }
+            
+                    public function tampar() {
+                        $this -> tampada = true;
+                    }
+                    public function destampar() {
+                        $this -> tampada = false;
+                    }
+                    public function getCor() {
+                        return $this -> cor;
+                    }
+                    public function setCor($c) {
+                        $this -> cor = $c;
+                    }
+                    public function getCarga() {
+                        return $this -> carga;
+                    }
+                    public function setCarga($ca) {
+                        $this -> carga = $ca;
+                    }
+                    public function getModelo() {
+                        return $this -> modelo;
+                    }
+                    public function setModelo($m) {
+                        $this -> modelo = $m;
+                    }
+                    public function getPonta() {
+                        return $this -> ponta;
+                    }
+                    public function setPonta($p) {
+                        $this -> ponta = $p;
+                    }
+                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="tab-pane fade" id="pills-index3" role="tabpanel" aria-labelledby="pills-index3-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php
+        include 'Caneta.php';
+        $caneta4 = new Caneta('BIC', 'Azul', 0.5, 100);
+        $caneta5 = new Caneta('Montblanc', 'Preta', 1.0, 100);
+    ?>
+    &lt;pre>
+        &lt;?= print_r($caneta4) ?>
+        &lt;?= print_r($caneta5) ?>
+    &lt;/pre>
+    &lt;?= "Eu tenho uma caneta modelo {$caneta4 -> getModelo()}, ponta {$caneta4 -> getPonta()}" ?>
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="#" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa bg-white text-black display-6 m-0 p-2 border border-secondary rounded-top-1" id="variosestilos">Interface</h2>
+            <div class="sub bg-white text-black p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy4" class="rounded-2 p-1 bg-white text-black">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo bg-white text-black p-2 rounded-bottom-1 border border-secondary">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active text-black" id="pills-controlador-tab" data-bs-toggle="pill" data-bs-target="#pills-controlador" type="button" role="tab" aria-controls="pills-controlador" aria-selected="true">Controlador.php</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link text-black" id="pills-controle-tab" data-bs-toggle="pill" data-bs-target="#pills-controle" type="button" role="tab" aria-controls="pills-controle" aria-selected="false">ControleRemoto.php</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link text-black" id="pills-index4-tab" data-bs-toggle="pill" data-bs-target="#pills-index4" type="button" role="tab" aria-controls="pills-index4" aria-selected="false">index.php</button>
+                    </li>
+                  </ul>
+
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-controlador" role="tabpanel" aria-labelledby="pills-controlador-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php 
+
+        interface Controlador 
+        {
+            function ligar();
+            function desligar();
+            function abrirMenu();
+            function fecharMenu();
+            function maisVolume();
+            function menosVolume();
+            function ligarMudo();
+            function desligarMudo();
+            function play();
+            function pause();
+        }
+
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="tab-pane fade" id="pills-controle" role="tabpanel" aria-labelledby="pills-controle-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php 
+
+        require 'Controlador.php';
+    
+        class ControleRemoto implements Controlador 
+        {
+            // Atributos
+            private $volume;
+            private $ligado;
+            private $tocando;
+    
+            //Métodos
+            function __construct()
+            {
+                $this -> volume = 50;
+                $this -> ligado = false;
+                $this -> tocando = false;
+            }
+    
+            private function setVolume($v) 
+            {
+                $this -> volume = $v;
+            }
+    
+            private function setLigado($l) 
+            {
+                $this -> ligado = $l;
+            }
+    
+            private function setTocando($t) 
+            {
+                $this -> tocando = $t;
+            }
+    
+            private function getVolume() 
+            {
+                return $this -> volume;
+            }
+    
+            private function getLigado() 
+            {
+                return $this -> ligado;
+            }
+    
+            private function getTocando() 
+            {
+                return $this -> tocando;
+            }
+    
+            function ligar() 
+            {   
+                echo 'Controle ligado!&lt;/br>';
+                $this -> setLigado(true);
+            }
+    
+            function desligar() 
+            {
+                echo 'Controle desligado!&lt;/br>';
+                $this -> setLigado(false);
+            }
+    
+            function abrirMenu()
+            {
+                echo "Volume: {$this -> getVolume()} ";
+                
+                for ($i = 0; $i &lt;= $this -> getVolume(); $i += 10) {
+                    echo '|';
+                }
+                echo "&lt;/br>";
+            }
+    
+            function fecharMenu()
+            {
+                echo "Fechando menu...&lt;/br>";
+            }
+    
+            function maisVolume()
+            {
+                if ($this -> getLigado())
+                {
+                    $this -> setVolume($this -> getVolume() + 5);
+                }
+            }
+    
+            function menosVolume()
+            {
+                if ($this -> getLigado())
+                {
+                    $this -> setVolume($this -> getVolume() - 5);
+                }
+            }
+    
+            function ligarMudo()
+            {
+                if ($this -> getVolume() > 0)
+                {
+                    echo 'Mudo ativado!&lt;/br>';
+                    $this -> setVolume(0);
+                }
+            }
+    
+            function desligarMudo()
+            {
+                if ($this -> getVolume() == 0) 
+                {
+                    echo 'Mudo desativado!&lt;/br>';
+                    $this -> setVolume(50);
+                }
+            }
+    
+            function play()
+            {
+                if ($this -> getLigado() &&! $this -> getTocando())
+                {
+                    $this -> setTocando(true);
+                }
+            }
+    
+            function pause()
+            {
+                if ($this -> getLigado() && $this -> getTocando())
+                {
+                    $this -> setTocando(false);
+                }
+            }
+        }
+                            
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="tab-pane fade" id="pills-index4" role="tabpanel" aria-labelledby="pills-index4-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php
+        include 'ControleRemoto.php';
+        $controle1 = new ControleRemoto;
+
+        $controle1 -> ligar();
+        $controle1 -> maisVolume();
+        $controle1 -> maisVolume();
+        $controle1 -> abrirMenu();
+        $controle1 -> ligarMudo();
+        $controle1 -> abrirMenu();
+        $controle1 -> desligarMudo();
+        $controle1 -> abrirMenu();
+        $controle1 -> fecharMenu();
+        $controle1 -> desligar();
+    ?>
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="#" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa bg-white text-black display-6 m-0 p-2 border border-secondary rounded-top-1" id="fontesdiferentes">Agregação</h2>
+            <div class="sub bg-white text-black p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy5" class="rounded-2 p-1 bg-white text-black">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo bg-white text-black p-2 rounded-bottom-1 border border-secondary">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active text-black" id="pills-lutador-tab" data-bs-toggle="pill" data-bs-target="#pills-lutador" type="button" role="tab" aria-controls="pills-lutador" aria-selected="true">Lutador.php</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link text-black" id="pills-luta-tab" data-bs-toggle="pill" data-bs-target="#pills-luta" type="button" role="tab" aria-controls="pills-luta" aria-selected="false">Luta.php</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link text-black" id="pills-index5-tab" data-bs-toggle="pill" data-bs-target="#pills-index5" type="button" role="tab" aria-controls="pills-index5" aria-selected="false">index.php</button>
+                    </li>
+                  </ul>
+
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-lutador" role="tabpanel" aria-labelledby="pills-lutador-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php 
+
+        class Lutador
+        {
+            //Atributos
+            private $nome;
+            private $nacionalidade;
+            private $idade;
+            private $altura;
+            private $peso;
+            private $categoria;
+            private $vitorias;
+            private $derrotas;
+            private $empates;
+
+            //Métodos
+            function __construct($nome, $nacionalidade, $idade, $altura, $peso, $vitorias, $derrotas, $empates)
+            {
+                $this -> setNome($nome);
+                $this -> setNacionnalidade($nacionalidade);
+                $this -> setIdade($idade);
+                $this -> setAltura($altura);
+                $this -> setPeso($peso);
+                $this -> setVitorias($vitorias);
+                $this -> setDerrotas($derrotas);
+                $this -> setEmpates($empates);
+            }
+
+            function setNome($no)
+            {
+                $this -> nome = $no;
+            }
+
+            function setNacionnalidade($na)
+            {
+                $this -> nacionalidade = $na;
+            }
+
+            function setIdade($i)
+            {
+                $this -> idade = $i;
+            }
+
+            function setAltura($a)
+            {
+                $this -> altura = $a;
+            }
+
+            function setPeso($p)
+            {
+                $this -> peso = $p;
+
+                if ($p &lt; 52.2)
+                {
+                    $this -> setCategoria('inválido!');
+                }
+                else if ($p &lt;= 70.3)
+                {
+                    $this -> setCategoria('peso leve');
+                }
+                else if ($p &lt;= 83.9)
+                {
+                    $this -> setCategoria('peso médio');
+                }
+                else if ($p &lt;= 120.2)
+                {
+                    $this -> setCategoria('peso pesado');
+                }
+                else
+                {
+                    $this -> setCategoria('inválido!');
+                }
+
+            }
+
+            private function setCategoria($c)
+            {
+                $this -> categoria = $c;
+            }
+
+            function setVitorias($v)
+            {
+                $this -> vitorias = $v;
+            }
+
+            function setDerrotas($d)
+            {
+                $this -> derrotas = $d;
+            }
+
+            function setEmpates($e)
+            {   
+                $this -> empates = $e;
+            }   
+
+            function getNome()
+            {
+                return $this -> nome;
+            }
+
+            function getNacionalidade()
+            {
+                return $this -> nacionalidade;
+            }
+
+            function getIdade()
+            {
+                return $this -> idade;
+            }
+
+            function getAltura()
+            {
+                return $this -> altura;
+            }
+
+            function getPeso()
+            {
+                return $this -> peso;
+            }
+
+            function getCategoria()
+            {
+                return $this -> categoria;
+            }
+
+            function getVitorias()
+            {   
+                return $this -> vitorias;
+            }
+
+            function getDerrotas()
+            {
+                return $this -> derrotas;   
+            }
+
+            function getEmpates()
+            {
+                return $this -> empates;
+            }
+            
+            function iterar()
+            {
+                foreach ($this as $key => $value)
+                {
+                    echo "$key = $value&lt;/br>";
+                }
+            }
+
+            function apresentar()
+            {   
+                echo "==== APRESENTAÇÃO ====&lt;/br>";
+                echo "Lutador: {$this -> getNome()}&lt;/br>";
+                echo "Origem: {$this -> getNacionalidade()}&lt;/br>";
+                echo "{$this -> getIdade()} anos&lt;/br>";
+                echo "Pesando: {$this -> getPeso()} quilos&lt;/br>";
+                echo "Ganhou: {$this -> getVitorias()} vez(es)&lt;/br>";
+                echo "Perdeu: {$this -> getDerrotas()} vez(es)&lt;/br>";
+                echo "Empatou: {$this -> getEmpates()} vez(es)&lt;/br>";
+            }
+
+            function status()
+            {   
+                echo "==== STATUS ====&lt;/br>";
+                echo "{$this -> getNome()}&lt;/br>";
+                echo "É da categoria {$this -> getCategoria()}&lt;/br>";
+                echo "{$this -> getVitorias()} vitórias&lt;/br>";
+                echo "{$this -> getDerrotas()} derrotas&lt;/br>";
+                echo "{$this -> getEmpates()} empates&lt;/br>";
+            }
+        
+            function ganharLuta()
+            {
+                $this -> setVitorias($this -> getVitorias() + 1);
+            }
+
+            function perderLuta()
+            {
+                $this -> setDerrotas($this -> getDerrotas() + 1);
+            }
+
+            function empatarLuta()
+            {
+                $this -> setEmpates($this -> getEmpates() + 1);
+            }
+        }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="tab-pane fade" id="pills-luta" role="tabpanel" aria-labelledby="pills-luta-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php 
+
+        require_once 'Lutador.php';
+    
+        class Luta
+        {
+            private $desafiado;
+            private $desafiante;
+            private $rounds;
+            private $aprovada;
+    
+            function setDesafiado($da)
+            {
+                $this -> desafiado = $da;
+            }
+    
+            function setDesafiante($de)
+            {
+                $this -> desafiante = $de;
+            }
+    
+            function setRounds($r)
+            {
+                $this -> rounds = $r;
+            }
+    
+            function setAprovada($a)
+            {
+                $this -> aprovada = $a;
+            }
+    
+            function getDesafiado()
+            {
+                return $this -> desafiado;
+            }
+    
+            function getDesafiante()
+            {
+                return $this -> desafiante;
+            }
+    
+            function getRounds()
+            {
+                return $this -> rounds;
+            }
+    
+            function getAprovada()
+            {
+                return $this -> aprovada;
+            }
+    
+            function marcarLuta($l1, $l2)
+            {
+                if ($l1 -> getCategoria() == $l2 -> getCategoria())
+                {
+                    if ($l1 != $l2)
+                    {
+                        $this -> setAprovada(true);
+                        $this -> setDesafiado($l1);
+                        $this -> setDesafiante($l2);
+                    }
+                }
+                else
+                {
+                    $this -> setAprovada(false);
+                }
+            }
+    
+            function lutar()
+            {
+                if ($this -> getAprovada())
+                {
+                    $this -> getDesafiado() -> apresentar();
+                    $this -> getDesafiante() -> apresentar();
+                    $resultado = rand(0, 2);
+                    switch ($resultado)
+                    {
+                        case 0:
+                            echo "~~~~ RESULTADO ~~~~&lt;/br>";
+                            echo "Empatou!&lt;/br>";
+                            $this -> getDesafiado() -> empatarLuta();
+                            $this -> getDesafiante() -> empatarLuta();
+                            break;
+                        
+                        case 1:
+                            echo "~~~~ RESULTADO ~~~~&lt;/br>";
+                            echo "O {$this -> getDesafiado() -> getNome()} ganhou!&lt;/br>";
+                            $this -> getDesafiado() -> ganharLuta();
+                            $this -> getDesafiante() -> perderLuta();
+    
+                            break;
+    
+                        case 2:
+                            echo "~~~~ RESULTADO ~~~~&lt;/br>";
+                            echo "O {$this -> getDesafiante() -> getNome()} ganhou!&lt;/br>";
+                            $this -> getDesafiado() -> perderLuta();
+                            $this -> getDesafiante() -> ganharLuta();
+                            break;
+                    }
+                }
+                else
+                {
+                    echo "Luta não vai rolar!";
+                }
+            }
+        }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="tab-pane fade" id="pills-index5" role="tabpanel" aria-labelledby="pills-index5-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php 
+        include 'Lutador.php';
+        include 'Luta.php';
+
+        $nomes = ['Roberto', 'Lucas', 'Felipe', 'André', 'Caio', 'Marco'];
+        $nacionalidades = ['BR', 'EUA', 'CA', 'JP', 'CH', 'AG'];
+        $idades = [37, 39, 41, 33, 36, 42];
+        $alturas = [1.78, 1.74, 1.89, 1.82, 1.90, 1.77];
+        $pesos = [73, 69, 86, 64, 112, 78];
+        $vitorias = [10, 12, 7, 16, 11, 4];
+        $derrotas = [2, 4, 3, 1, 0, 5];
+        $empates = [0, 1, 0 , 4, 3, 6];
+
+        for ($i = 0; $i &lt;= 5; $i++)
+        {
+            $participantes[$i] = new Lutador($nomes[$i], $nacionalidades[$i], $idades[$i], $alturas[$i], $pesos[$i], $vitorias[$i], $derrotas[$i], $empates[$i]);
+        }
+        
+        $combate1 = new Luta;
+        $combate1 -> marcarLuta($participantes[1], $participantes[3]);
+        $combate1 -> lutar();
+
+        $participantes[1] -> status();
+        $participantes[3] -> status();
+
+        //var_dump($combate1);
+    ?>
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="#" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa bg-white text-black display-6 m-0 p-2 border border-secondary rounded-top-1" id="fontesexter">Heranças</h2>
+            <div class="sub bg-white text-black p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy6" class="rounded-2 p-1 bg-white text-black">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo bg-white text-black p-2 rounded-bottom-1 border border-secondary">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active text-black" id="pills-pessoa-tab" data-bs-toggle="pill" data-bs-target="#pills-pessoa" type="button" role="tab" aria-controls="pills-pessoa" aria-selected="true">Pessoa.php</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link text-black" id="pills-funcionario-tab" data-bs-toggle="pill" data-bs-target="#pills-funcionario" type="button" role="tab" aria-controls="pills-funcionario" aria-selected="false">Funcionario.php</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link text-black" id="pills-professor-tab" data-bs-toggle="pill" data-bs-target="#pills-professor" type="button" role="tab" aria-controls="pills-professor" aria-selected="false">Professor.php</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link text-black" id="pills-aluno-tab" data-bs-toggle="pill" data-bs-target="#pills-aluno" type="button" role="tab" aria-controls="pills-aluno" aria-selected="false">Aluno.php</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                       <button class="nav-link text-black" id="pills-index6-tab" data-bs-toggle="pill" data-bs-target="#pills-index6" type="button" role="tab" aria-controls="pills-index6" aria-selected="false">index.php</button>
+                    </li>
+                  </ul>
+
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-pessoa" role="tabpanel" aria-labelledby="pills-pessoa-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php 
+
+        class Pessoa
+        {
+            private $nome;
+            private $idade;
+            private $sexo;
+    
+            function __construct($no, $ida, $se)
+            {
+                $this -> setNome($no);
+                $this -> setIdade($ida);
+                $this -> setSexo($se);
+            }
+    
+            function setNome($n)
+            {
+                $this -> nome = $n;
+            }
+    
+            function setIdade($i)
+            {
+                $this -> idade = $i;
+            }
+    
+            function setSexo($s)
+            {
+                $this -> sexo = $s;
+            }
+    
+            function getNome()
+            {
+                return $this -> nome;
+            }
+    
+            function getIdade()
+            {
+                $this -> idade;
+            }
+    
+            function getSexo()
+            {
+                $this -> sexo;
+            }
+    
+            function fazerNiver()
+            {
+                $this -> idade++;
+            }
+        }
+    
+    ?>
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="tab-pane fade" id="pills-funcionario" role="tabpanel" aria-labelledby="pills-funcionario-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php 
+
+        require_once 'Pessoa.php';
+    
+        class Funcionario extends Pessoa
+        {
+            private $setor;
+            private $trabalhando;
+    
+            function mudarTrabalho()
+            {
+                $this -> trabalhando = !$this -> trabalhando;
+            }
+    
+            function setSetor($s)
+            {
+                $this -> setor = $s;
+            }
+    
+            function setTrabalhando($tr)
+            {
+                $this -> trabalhando = $tr;
+            }
+    
+            function getSetor()
+            {
+                return $this -> setor;
+            }
+    
+            function getTrabalhando()
+            {
+                return $this -> trabalhando;
+            }
+        }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="tab-pane fade" id="pills-professor" role="tabpanel" aria-labelledby="pills-professor-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php 
+
+        require_once 'Pessoa.php';
+    
+        class Professor extends Pessoa
+        {
+            private $especialidade;
+            private $salario;
+    
+            function receberAumento($valor)
+            {
+                $this -> salario += $valor;
+            }
+    
+            function setEspec($esp)
+            {
+                $this -> especialidade = $esp;
+            }
+    
+            function setSalario($sa)
+            {
+                $this -> salario = $sa;
+            }
+    
+            function getEspec()
+            {
+                return $this -> especialidade;
+            }
+    
+            function getSalario()
+            {
+                return $this -> salario;
+            }
+        }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="tab-pane fade" id="pills-aluno" role="tabpanel" aria-labelledby="pills-aluno-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php 
+
+        require_once 'Pessoa.php';
+    
+        class Aluno extends Pessoa
+        {
+            private $matricula;
+            private $curso;
+    
+            function cancelarMatr()
+            {
+                echo 'Matrícula será cancelada, irá de berço, vai de americana, voltou pro lobby</br>';
+            }
+    
+            function setMatr($m)
+            {
+                $this -> matricula = $m;
+            }
+    
+            function setCurso($c)
+            {
+                $this -> curso = $c;
+            }
+    
+            function getMatr()
+            {
+                return $this -> matricula;
+            }
+    
+            function getCurso()
+            {
+                return $this -> curso;
+            }
+        }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="tab-pane fade" id="pills-index6" role="tabpanel" aria-labelledby="pills-index6-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php 
+        include 'Pessoa.php';
+        include 'Aluno.php';
+        include 'Professor.php';
+        include 'Funcionario.php';
+
+        $p1 = new Aluno('Pascal', 15, 'M');
+        $p2 = new Professor('Marileu', 58, 'M');
+        $p3 = new Funcionario('Jiranda', 49, 'F');
+
+        $p1 -> setMatr(true);
+        $p1 -> setCurso('Programação');
+
+        $p2 -> setEspec('POO');
+        $p2 -> setSalario(3000);
+
+        $p3 -> setSetor('Informática');
+        $p3 -> setTrabalhando(true); 
+    ?>
+    &lt;pre>
+        &lt;?= print_r($p1) ?>
+        &lt;?= print_r($p2) ?>
+        &lt;?= print_r($p3) ?>
+    &lt;/pre>
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="#" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+ 
+        <div class="container-fluid">
+            <h2 class="titulocaixa bg-white text-black display-6 m-0 p-2 border border-secondary rounded-top-1" id="poli">Polimorfismo</h2>
+            <div class="sub bg-white text-black p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy5" class="rounded-2 p-1 bg-white text-black">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo bg-white text-black p-2 rounded-bottom-1 border border-secondary">
+
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active text-black" id="pills-animal-tab" data-bs-toggle="pill" data-bs-target="#pills-animal" type="button" role="tab" aria-controls="pills-animal" aria-selected="true">Animal.php</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link text-black" id="pills-mamifero-tab" data-bs-toggle="pill" data-bs-target="#pills-mamifero" type="button" role="tab" aria-controls="pills-mamifero" aria-selected="false">Mamifero.php</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link text-black" id="pills-lobo-tab" data-bs-toggle="pill" data-bs-target="#pills-lobo" type="button" role="tab" aria-controls="pills-lobo" aria-selected="false">Lobo.php</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link text-black" id="pills-cachorro-tab" data-bs-toggle="pill" data-bs-target="#pills-cachorro" type="button" role="tab" aria-controls="pills-cachorro" aria-selected="false">Cachorro.php</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link text-black" id="pills-index7-tab" data-bs-toggle="pill" data-bs-target="#pills-index7" type="button" role="tab" aria-controls="pills-index7" aria-selected="false">index.php</button>
+                    </li>
+                  </ul>
+
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-animal" role="tabpanel" aria-labelledby="pills-animal-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php 
+        abstract class Animal
+        {
+            
+        }
+    ?>
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="tab-pane fade" id="pills-mamifero" role="tabpanel" aria-labelledby="pills-mamifero-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php 
+        require_once 'Animal.php';
+        
+        class Mamifero extends Animal
+        {
+            private $corPelo;
+        
+            function locomover()
+            {
+                echo 'Correndo&lt;/br>';
+            }
+        
+            function alimentar()
+            {
+                echo 'Mamando&lt;/br>';
+            }
+        
+            function emitirSom()
+            {
+                echo 'Som de mamífero&lt;/br>';
+            }
+        
+            function setCorPelo($cp)
+            {
+                $this -> corPelo = $cp;
+            }
+        
+            function getCorPelo()
+            {
+                return $this -> corPelo;
+            }
+        }
+        
+    ?>
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="tab-pane fade" id="pills-lobo" role="tabpanel" aria-labelledby="pills-lobo-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php 
+        require_once 'Mamifero.php';
+
+        class Lobo extends Mamifero
+        {
+            function emitirSom()
+            {
+                echo 'AAAAUUUUUUUUUUU';
+            }
+        }
+    ?>
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="tab-pane fade" id="pills-cachorro" role="tabpanel" aria-labelledby="pills-cachorro-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php 
+
+        require_once 'Lobo.php';
+        
+        class Cachorro extends Lobo
+        {
+            function emitirSom()
+            {
+                echo 'Au! Au! Au!&lt;/br>';
+            }
+        
+            function reagirFrase($frase)
+            {
+                if ($frase == 'Olá' || $frase == 'Toma comida')
+                {
+                    echo 'Abanar e latir&lt;/br>';
+                }
+                else
+                {
+                    echo 'Rosnar&lt;/br>';
+                }
+            }
+        
+            function reagirHora($hora)
+            {
+                if ($hora &lt; 12)
+                {
+                    echo 'Abanar&lt;/br>';
+                }
+                else if ($hora &lt;= 18)
+                {
+                    echo 'abanar e latir&lt;/br>';
+                }
+        
+                else
+                {
+                    echo 'Ignorar&lt;/br>';
+                }
+            }
+        
+            function reagirDono($dono)
+            {
+                if ($dono)
+                {
+                    echo 'abanar&lt;/br>';
+                }
+                else
+                {
+                    echo 'rosnar e latir&lt;/br>';
+                }
+            }
+        
+            function reagirIdadePeso($idade, $peso)
+            {
+                if ($idade &lt; 5)
+                {
+                    if ($peso &lt; 10)
+                    {
+                        echo 'abanar&lt;/br>';
+                    }
+                    else 
+                    {
+                        echo 'latir&lt;/br>';
+                    }
+                }
+                else
+                {
+                    if ($peso &lt; 10)
+                    {
+                        echo 'rosnar&lt;/br>';
+                    }
+                    else
+                    {
+                        echo 'ignorar&lt;/br>';
+                    }
+                }
+            }
+        }
+        
+    ?>
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="tab-pane fade" id="pills-index7" role="tabpanel" aria-labelledby="pills-index7-tab" tabindex="0">
+                        <pre>
+                            <code>
+    &lt;?php 
+        include 'Cachorro.php';
+
+        $dog = new Cachorro;
+
+        $dog -> reagirFrase('Olá');
+        $dog -> reagirFrase('Dale');
+        $dog -> reagirHora(11);
+        $dog -> reagirHora(21);
+        $dog -> reagirDono(true);
+        $dog -> reagirDono(false);
+        $dog -> reagirIdadePeso(2, 12.5);
+        $dog -> reagirIdadePeso(17, 4.5);
+    ?>
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="#" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer class="m-0">
+        <p class="p-1 text-center m-0">Site desenvolvido por Crysnanth</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c1ea196d9b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.getElementById("copy1").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire( 
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy2").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo2");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy3").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo3");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy3").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo3.1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy3").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo3.2");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy4").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo4");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy4").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo4.1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy4").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo4.2");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy4").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo4.3");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy5").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo5");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy5").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo5.1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy6").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo6");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy6").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo6.1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+</body>
+</html>

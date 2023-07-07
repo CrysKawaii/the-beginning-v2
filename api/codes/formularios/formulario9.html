@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formus</title>
+</head>
+<body>
+    <pre>
+        <code>
+&lt;h1&gt;Mais formu&lt;/h1&gt;
+&lt;form action="cadastro.php"&gt;
+    &lt;p&gt;
+    &lt;label for="idnum"&gt;Número:&lt;/label&gt;
+    &lt;input type="range" name="num" id="idnum" value="1" min="0" max="15" oninput="idvalor.innerHTML = Number(idnum.value)"&gt;
+    &lt;output id="idvalor"&gt;1&lt;/output&gt;
+    &lt;/p&gt;
+
+    &lt;input type="submit" value="Enviar"&gt;
+    &lt;input type="reset" value="Limpar"&gt;
+&lt;/form&gt;
+        </code>
+    </pre>
+</body>
+</html>

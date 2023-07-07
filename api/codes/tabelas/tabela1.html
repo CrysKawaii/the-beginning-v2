@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas</title>
+   
+</head>
+<body>
+    <pre>
+        <code>
+&lt;style&gt;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        table {
+            width: 600px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th {
+            background-color: grey;
+            color: white;
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .mulheres {
+            border-color: blueviolet;
+        }
+
+        .homens {
+            border-color: crimson;
+        }
+    &lt;/style&gt;
+&lt;body&gt;           
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Grupo&lt;/th&gt;
+            &lt;th scope="col"&gt;Nomes&lt;/th&gt;
+            &lt;th colspan="3" scope="colgroup"&gt;Filmes&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th class="mulheres" rowspan="3" scope="rowgroup"&gt;Mulheres&lt;/th&gt;
+            &lt;td class="mulheres"&gt;Ana Maria Santos&lt;/td&gt;
+            &lt;td class="mulheres"&gt;Alien&lt;/td&gt;
+            &lt;td class="mulheres"&gt;Rambo&lt;/td&gt;
+            &lt;td class="mulheres"&gt;Vingadores&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class="mulheres"&gt;Beatriz Souza&lt;/td&gt;
+            &lt;td class="mulheres"&gt;Hulk&lt;/td&gt;
+            &lt;td class="mulheres"&gt;Inceptoin&lt;/td&gt;
+            &lt;td class="mulheres"&gt;Batman&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class="mulheres"&gt;Cláudia Melo&lt;/td&gt;
+            &lt;td class="mulheres"&gt;Oblivion&lt;/td&gt;
+            &lt;td class="mulheres"&gt;Matrix&lt;/td&gt;
+            &lt;td class="mulheres"&gt;Big Hero&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th class="homens" rowspan="3" scope="rowgroup"&gt;Homens&lt;/th&gt;
+            &lt;td class="homens"&gt;Bruno Mendonça&lt;/td&gt;
+            &lt;td class="homens"&gt;Intocáveis&lt;/td&gt;
+            &lt;td class="homens"&gt;Amnésia&lt;/td&gt;
+            &lt;td class="homens"&gt;Gladiador&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class="homens"&gt;Daniel Lourenço&lt;/td&gt;
+            &lt;td class="homens"&gt;Wall-E&lt;/td&gt;
+            &lt;td class="homens"&gt;Oldboy&lt;/td&gt;
+            &lt;td class="homens"&gt;Dangal&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class="homens"&gt;Fábiano Mota&lt;/td&gt;
+            &lt;td class="homens"&gt;Star Wars 5&lt;/td&gt;
+            &lt;td class="homens"&gt;Taxi Driver&lt;/td&gt;
+            &lt;td class="homens"&gt;Toy Story&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+        </code>
+    </pre>
+</body>
+</html>

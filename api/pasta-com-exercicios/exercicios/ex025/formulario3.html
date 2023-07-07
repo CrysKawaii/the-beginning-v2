@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formus</title>
+</head>
+<body>
+    <h1>Teste de formus</h1>
+    <form action="cadastro.php" method="get">
+        <p>
+            <label for="idnome">Nome:</label>
+            <input type="text" name="nome" id="idnome">
+        </p>
+        <p>
+            <label for="idnota">Nota:</label>
+            <input type="number" name="nota" id="idnota" step="0.1" min="0" max="10" value="6">
+        </p>
+        <p>
+            <label for="iddata">Data:</label>
+            <input type="month" name="data" id="iddata">
+        </p>
+        <p>
+            <label for="iddia">Dia:</label>
+            <input type="date" name="dia" id="iddia">
+        </p>
+        <p>
+            <label for="idhora">Horário:</label>
+            <input type="time" name="hora" id="idhora">
+        </p>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
+    </form>
+</body>
+</html>

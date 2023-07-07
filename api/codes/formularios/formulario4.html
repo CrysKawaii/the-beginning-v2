@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formus</title>
+</head>
+<body>
+    <pre>
+        <code>
+&lt;h1&gt;Mais prática&lt;/h1&gt;
+&lt;form action="cadastro.php"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Dados pessoais&lt;/legend&gt;
+        &lt;p&gt;
+            &lt;label for="idnome">Nome:&lt;/label&gt;
+            &lt;input type="text" name="nome" id="idnome"&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+            &lt;label for="idemail"&gt;E-mail:&lt;/label&gt;
+            &lt;input type="email" name="email" id="idemail" required&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+            &lt;label for="idtelefone"&gt;Telefone:&lt;/label&gt;
+            &lt;input type="tel" name="telefone" id="idtelefone" 
+            required pattern="^\(\d{2}\)\d{4,5}-\d{4}$" placeholder="(00)00000-0000"&gt;
+            <!-- Estudar sobre RegEx-->
+        &lt;/p&gt;
+        &lt;input type="submit" value="Enviar"&gt;
+        &lt;input type="reset" value="Limpar"&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+        </code>
+    </pre>
+</body>
+</html>

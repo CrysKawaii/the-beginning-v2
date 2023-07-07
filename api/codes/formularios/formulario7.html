@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formus</title>
+</head>
+<body>
+    <pre>
+        <code>
+&lt;h1&gt;Mais e mais e mais treinamento&lt;/h1&gt;
+&lt;form action=""&gt;
+    &lt;p&gt;
+        &lt;label for="idestado"&gt;Estado&lt;/label&gt;
+        &lt;select name="estado" id="idestado"&gt;
+            &lt;optgroup label="Região Sudeste"&gt;
+                &lt;option value="MG"&gt;Minas Gerais&lt;/option&gt;
+                &lt;option value="SP"&gt;São Paulo&lt;/option&gt;
+                &lt;option value="RJ"&gt;Rio de Janeiro&lt;/option&gt;
+            &lt;/optgroup&gt;
+            &lt;optgroup label="Região Nordeste"&gt;
+                &lt;option value="RN"&gt;Rio Grande do Norte&lt;/option&gt;
+                &lt;option value="PE"&gt;Pernambuco&lt;/option&gt;
+                &lt;option value="BA"&gt;Bahia&lt;/option&gt;
+            &lt;/optgroup&gt;
+        &lt;/select&gt;
+    &lt;/p&gt;
+    &lt;p>&gt;
+        &lt;label for="idjogos"&gt;Jogos:&lt;/label&gt;
+        &lt;input type="text" name="jogos" id="idjogos" list="tiposjogos"&gt;
+        &lt;datalist id="tiposjogos"&gt;
+            &lt;option value="RPG"&gt;RPG&lt;/option&gt;
+            &lt;option value="FPS"&gt;FPS&lt;/option&gt;
+            &lt;option value="MOBA"&gt;MOBA&lt;/option&gt;
+        &lt;/datalist&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;label for="idopiniao"&gt;Opinião:&lt;/label&gt;
+        &lt;br&gt;
+        &lt;textarea name="opiniao" id="idopiniao" cols="20" rows="5" placeholder="Escreva aqui sua opinião"&gt;&lt;/textarea&gt;
+    &lt;/p&gt;
+    &lt;input type="submit" value="Enviar"&gt;
+    &lt;input type="reset" value="Limpar"&gt;
+&lt;/form&gt;
+        </code>
+    </pre>
+</body>
+</html>

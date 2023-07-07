@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dois For</title>
+</head>
+<body>
+    <h1>Senha!</h1>
+    <form action="cadastro.php" method="post">
+        <p>
+            <label for="idnome">Nome:</label>
+            <input type="text" name="nome" id="idnome" required minlength="5" maxlength="26" autocomplete="username" placeholder="nome de usuário" size="26">
+        </p>
+        <p>
+            <label for="idsenha">Senha:</label>
+            <input type="password" name="senha" id="idsenha" required minlength="8" autocomplete="new-password" placeholder="senha obrigatória" size="16">
+        </p>
+        <input type="submit" value="Envair">
+        <input type="reset" value="Limpar">
+    </form>
+</body>
+</html>

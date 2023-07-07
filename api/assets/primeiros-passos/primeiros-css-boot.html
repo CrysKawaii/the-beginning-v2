@@ -1,0 +1,3048 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/style-b.css">
+    <title>Primeiros passos Boostrap</title>
+    <style>
+
+        @media screen and (max-width: 500px) {
+            #verticallinks {
+                display: none;
+            }
+
+            header {
+                position: sticky;
+                top: 0;
+                min-width: 300px;
+            }
+
+            main {
+                min-width: 300px;
+            }
+
+            footer {
+                min-width: 300px;
+            }
+        }
+
+        @media screen and (min-width: 500px) and (max-width: 768px) {
+            #verticallinks {
+                display: none;
+            }
+
+            main {
+                min-width: 450px;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            #horizontallinks {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+<body class="bg-dark h-100">
+    <header class="text-light text-center p-2 mb-3 d-flex">
+        <a class="align-self-center" href="../../comboot.html"><i class="fa-solid fa-backward"></i></a>
+        <h1 class="display-4 m-auto">Começando a Estilizar</h1>
+        <div class="nav-item dropdown text-light p-2" id="horizontallinks">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+                <li>
+                <a class="dropdown-item" href="#primeirosite">Primeiro Site</a>
+            </li>
+                <li>
+                <a class="dropdown-item" href="#avancando">Avançando</a>
+            </li>
+                <li>
+                <a class="dropdown-item" href="#imagenssites">Imagens</a>
+            </li>
+                <li>
+                <a class="dropdown-item" href="#favicon">Favicon</a>
+            </li>
+                <li>
+                <a class="dropdown-item" href="#titulos">Títulos</a>
+            </li>
+                <li>
+                <a class="dropdown-item" href="#formata">Formatações</a>
+            </li>
+                <li>
+                <a class="dropdown-item" href="#listas">Listas</a>
+            </li>
+                <li>
+                <a class="dropdown-item" href="#adapta">Imagens Adaptativas</a>
+            </li>
+                <li>
+                <a class="dropdown-item" href="#videos">Vídeos</a>
+            </li>
+                <li>
+                <a class="dropdown-item" href="#links">Links</a>
+            </li>
+                <li>
+                <a class="dropdown-item" href="#iframes">Iframes</a>
+            </li>
+                <li>
+                <a class="dropdown-item" href="#forms">Formulários</a>
+            </li>
+            </ul>
+        </div>
+    </header>
+    <div id="verticallinks" class="p-2 position-fixed">
+        <h4 class="text-light border-bottom p-1">Nesta página</h4>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#primeirosestilos">Primeiros Estilos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#estilosinter">Estilos internos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#estilosexter">Estilos externos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#variosestilos">Jeitos de estilizar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#fontesdiferentes">Fontes diferentes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#fontesexter">Fontes externas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#box">Estilizando uma box</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#testecss">Testando CSS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#modelscaixa">Modelos de caixa</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#fundos">Fundos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#tabelas">Tabelas</a>
+            </li>
+          </ul>
+    </div>
+    <main class="m-auto w-50">
+        <div class="container-fluid">
+            <h2 class="titulocaixa display-6 m-0 p-2 border border-secondary rounded-top-4" id="primeirosestilos">Primeiros estilos</h2>
+            <div class="sub p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy1" class="rounded-2 p-1">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo p-2 text-light rounded-bottom-3 border border-secondary">
+                <pre>
+                    <code id="codigo1">
+&lt;body style="background-color: lightblue; font-family: Arial, Helvetica, sans-serif;"&gt;
+    &lt;h1&gt; style="color: mediumblue;"&gt;Capítulo 1&lt;/h1&gt;
+    &lt;h2&gt; style="color: firebrick;"&gt;Capítulo 1.1&lt;/h2&gt;
+    &lt;p&gt;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis pariatur nisi quaerat
+    laudantium iste hic, nihil voluptas explicabo quas consectetur aliquam atque itaque,
+    nesciunt recusandae obcaecati maxime cum laborum ad.&lt;/p&gt;
+    &lt;h2&gt; style="color: firebrick">Capítulo 1.2&lt;/h2&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit neque placeat assumenda ad
+    ducimus optio, laborum, a expedita quam quae quaerat distinctio aut perferendis cum?
+    Praesentium iusto a consectetur ducimus?&lt;/p&gt;
+    &lt;h1&gt; style="color: mediumblue;"&gt;Capítulo 2&lt;/h1&gt;
+    &lt;h2&gt; style="color: firebrick;"&gt;Capítulo 2.1&lt;/h2&gt;
+    &lt;p&gt;Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit illo minus nobis perferendis
+    laborum porro ullam, ex optio numquam ad. Dolor libero unde suscipit voluptas error atque,
+    laborum quos et?&lt;/p&gt;
+&lt;/body&gt;
+                    </code>
+                </pre>
+                <div class="d-flex flex-row-reverse align-items-center my-2">
+                    <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex013/index.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa display-6 m-0 p-2 border border-secondary rounded-top-4" id="estilosinter">Estilos internos/locais</h2>
+            <div class="sub p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy2" class="rounded-2 p-1">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo p-2 text-light rounded-bottom-3 border border-secondary">
+                <pre>
+                    <code id="codigo2">
+&lt;head>
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Estilos&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            background-color: lightblue;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+        h1 {
+            color: darkred;
+            background-color: cornflowerblue;
+        }
+        h2 {
+            color: mediumblue;
+        }
+        p {
+            text-align: justify;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1>Capítulo 1&lt;/h1&gt;
+    &lt;h2>Capítulo 1.1&lt;/h2&gt;
+    &lt;p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis pariatur nisi 
+    quaerat laudantium iste hic, nihil voluptas explicabo quas consectetur aliquam atque 
+    itaque, nesciunt recusandae obcaecati maxime cum laborum ad.&lt;/p&gt;
+    &lt;h2&gt;Capítulo 1.2&lt;/h2&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit neque placeat 
+    assumenda ad ducimus optio, laborum, a expedita quam quae quaerat distinctio aut 
+    perferendis cum? Praesentium iusto a consectetur ducimus?&lt;/p&gt;
+    &lt;h1>Capítulo 2&lt;/h1&gt;
+    &lt;h2>Capítulo 2.1&lt;/h2&gt;
+    &lt;p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit illo minus nobis 
+    perferendis laborum porro ullam, ex optio numquam ad. Dolor libero unde suscipit 
+    voluptas error atque, laborum quos et?&lt;/p&gt;
+&lt;/body&gt;
+                    </code>
+                </pre>
+                <div class="d-flex flex-row-reverse align-items-center my-2">
+                    <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex014/index.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa display-6 m-0 p-2 border border-secondary rounded-top-4" id="estilosexter">Estilos externos</h2>
+            <div class="sub p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy3" class="rounded-2 p-1">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo p-2 text-light rounded-bottom-3 border border-secondary">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="index-tab" data-bs-toggle="tab" data-bs-target="#index-tab-pane" type="button" role="tab" aria-controls="index-tab-pane" aria-selected="true">index</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pagina2-tab" data-bs-toggle="tab" data-bs-target="#pagina2-tab-pane" type="button" role="tab" aria-controls="pagina2-tab-pane" aria-selected="false">pagina2</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="style-tab" data-bs-toggle="tab" data-bs-target="#style-tab-pane" type="button" role="tab" aria-controls="style-tab-pane" aria-selected="false">style</button>
+                    </li>
+                </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="index-tab-pane" role="tabpanel" aria-labelledby="index-tab" tabindex="0">
+                    <pre>
+                        <code id="codigo3">
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title>Estilos&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt&gt;
+&lt;body&gt;
+    &lt;h1&gt;Capítulo 1&lt;/h1&gt;
+    &lt;h2&gt;Capítulo 1.1&lt;/h2&gt;
+    &lt;p&gt;Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+    Veritatis pariatur nisi quaerat laudantium iste hic, nihil voluptas 
+    explicabo quas consectetur aliquam atque itaque, nesciunt recusandae 
+    obcaecati maxime cum laborum ad.&lt;/p&gt;
+    &lt;h2&gt;Capítulo 1.2&lt;/h2&gt;
+    &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Fugit neque placeat assumenda ad ducimus optio, laborum, a 
+    expedita quam quae quaerat distinctio aut perferendis cum? Praesentium 
+    iusto a consectetur ducimus?&lt;/p&gt;
+    &lt;h1&gt;Capítulo 2&lt;/h1&gt;
+    &lt;h2&gt;Capítulo 2.1&lt;/h2&gt;
+    &lt;p&gt;Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+    Velit illo minus nobis perferendis laborum porro ullam, ex optio numquam ad. 
+    Dolor libero unde suscipit voluptas error atque, laborum quos et?&lt;/p&gt;
+    &lt;p&gt;&lt;a href="pagina2.html">Ir para a página seguinte&lt;/a>&lt;/p&gt;
+&lt;/body&gt&gt;
+                        </code>
+                    </pre>
+                    <div class="d-flex flex-row-reverse align-items-center my-2">
+                        <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex015/index.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pagina2-tab-pane" role="tabpanel" aria-labelledby="pagina2-tab" tabindex="0">
+                    <pre class="p-1">
+                        <code id="codigo3.1">
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title>Página 2&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Segunda página&lt;/h1&gt;
+    &lt;h2&gt;Aplicando estilos externos&lt;/h2&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    Ipsum, sapiente saepe commodi quia magni ex amet libero deleniti 
+    ut voluptate dignissimos iste adipisci dolores laboriosam deserunt 
+    excepturi hic suscipit. Saepe?&lt;/p&gt;
+    &lt;p&gt;&lt;a href="index.html"&gt;Voltar&lt;/a&gt;&lt;/p&gt;
+&lt;/body&gt;
+                        </code>
+                    </pre>
+                    <div class="d-flex flex-row-reverse align-items-center my-2">
+                        <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex015/pagina2.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="style-tab-pane" role="tabpanel" aria-labelledby="style-tab" tabindex="0">
+                    <pre class="p-1">
+                        <code id="codigo3.2">
+@charset "UTF-8";
+
+body {
+background-color: lightgoldenrodyellow;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 20px;
+}
+
+h1 {
+color: darkred;
+background-color: goldenrod;
+}
+
+h2 {
+color: mediumblue;
+}
+
+p {
+text-align: justify;
+}
+                        </code>
+                    </pre>
+                    <!-- <div class="d-flex flex-row-reverse align-items-center my-2">
+                        <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex025/formulario10.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                    </div> -->
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa display-6 m-0 p-2 border border-secondary rounded-top-4" id="variosestilos">Vários jeitos de estilizar</h2>
+            <div class="sub p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy4" class="rounded-2 p-1">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo p-2 text-light rounded-bottom-3 border border-secondary">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="cores01-tab" data-bs-toggle="tab" data-bs-target="#cores01-tab-pane" type="button" role="tab" aria-controls="cores01-tab-pane" aria-selected="true">Cores01</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="cores02-tab" data-bs-toggle="tab" data-bs-target="#cores02-tab-pane" type="button" role="tab" aria-controls="cores02-tab-pane" aria-selected="false">Cores02</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="cores03-tab" data-bs-toggle="tab" data-bs-target="#cores03-tab-pane" type="button" role="tab" aria-controls="cores03-tab-pane" aria-selected="false">Cores03</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="style-cores03-tab" data-bs-toggle="tab" data-bs-target="#style-cores03-tab-pane" type="button" role="tab" aria-controls="style-cores03-tab-pane" aria-selected="false">style-cores03</button>
+                      </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="cores01-tab-pane" role="tabpanel" aria-labelledby="cores01-tab" tabindex="0">
+                        <pre class="p-1">
+                            <code id="codigo4">
+&lt;body&gt;            
+<!-- Cores por meio de nomes em inglês-->
+&lt;h2 style="background-color: blue; color: white;">Exemplo de cores&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi minus hic 
+officiis natus fuga adipisci voluptate architecto ex fugit quae, pariatur maiores 
+magni alias temporibus deleniti, voluptatibus deserunt laborum quis!&lt;/p&gt;
+<!-- Cores por meio de números Hexadecimais
+Decimais: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+Hexadecimais: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F-->
+&lt;h2 style="background-color: #0000ff; color: #ffffff;">Exemplo de cores&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi minus hic 
+officiis natus fuga adipisci voluptate architecto ex fugit quae, pariatur maiores 
+magni alias temporibus deleniti, voluptatibus deserunt laborum quis!&lt;/p&gt;
+<!-- Cores por meio de números RGB
+Red: 0 a 255
+Green: 0 a 255
+Blue: 0 a 255-->
+&lt;h2 style="background-color: rgb(0, 0, 255); color: rgb(255, 255, 255);">Exemplo de cores&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi minus hic 
+officiis natus fuga adipisci voluptate architecto ex fugit quae, pariatur maiores 
+magni alias temporibus deleniti, voluptatibus deserunt laborum quis!&lt;/p&gt;
+<!-- Cores por meio de HSL (Hue, Saturation, Luminosity)-->
+&lt;h2 style="background-color: hsl(240, 100%, 50%); color: hsl(0, 0%, 100%);"&gt;Exemplo de cores&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi minus hic 
+officiis natus fuga adipisci voluptate architecto ex fugit quae, pariatur maiores 
+magni alias temporibus deleniti, voluptatibus deserunt laborum quis!&lt;/p&gt;
+<!-- Cores por meio doss atalhos do VSCode
+Só passar o mouse encima da cor e vai aparecer a tela para escolher qualquer cor-->
+&lt;h2 style="background-color: rgb(136, 24, 39); color: white;"&gt;Exemplo de cores&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi minus hic 
+officiis natus fuga adipisci voluptate architecto ex fugit quae, pariatur maiores 
+magni alias temporibus deleniti, voluptatibus deserunt laborum quis!&lt;/p&gt;
+&lt;body&gt;
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex016/cor01.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="cores02-tab-pane" role="tabpanel" aria-labelledby="cores02-tab" tabindex="0">
+                        <pre class="p-1">
+                            <code id="codigo4.1">
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title>Degardê em CSS&lt;/title&gt;
+    &lt;style&gt;
+        * {
+height: 100%;
+        }
+        body {
+background-image: linear-gradient(to bottom, rgb(146, 19, 19), rgb(111, 57, 111));
+background-attachment: fixed;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+    &lt;body&gt;
+    &lt;h1&gt;Testando as cores em cascata&lt;/h1&gt;
+&lt;body&gt;
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex016/cor02.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="cores03-tab-pane" role="tabpanel" aria-labelledby="cores03-tab" tabindex="0">
+                        <pre>
+                            <code id="codigo4.2">
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title>Exemplo&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;main&gt;
+        &lt;h1&gt;Site de exemplo&lt;/h1&gt;
+        &lt;h2&gt;Título 1&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa libero corrupti 
+        voluptatum, asperiores praesentium excepturi facilis enim deserunt dolorum labore debitis 
+        ab explicabo cum ullam est necessitatibus at id ipsa.&lt;/p&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam doloremque 
+        cupiditate mollitia labore officia tempore repellat nam molestias laboriosam voluptatibus, 
+        exercitationem, maiores quis. Quas et modi voluptatem tenetur quidem ab&lt;/p&gt;
+        &lt;h2&gt;Título 2&lt;/h2&gt;
+        &lt;p&gt;Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt quod 
+        expedita soluta cupiditate quos corporis quisquam asperiores voluptate ea, repellendus 
+        ducimus. Consequuntur quibusdam, odit rerum odio quo nulla placeat molestias.&lt;/p&gt;
+        &lt;p&gt;Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam aut 
+        aliquam pariatur qui accusamus quidem et. Consequatur nihil labore, doloribus accusamus 
+        mollitia alias consequuntur fuga qui dolor facere velit harum.&lt;/p&gt;
+        &lt;h2&gt;Título 3&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt repellendus 
+        dolorum numquam! Quos quibusdam blanditiis esse aliquid quae assumenda exercitationem 
+        consectetur libero tempore in distinctio, voluptate eveniet recusandae accusamus quisquam?&lt;/p&gt;
+        &lt;p&gt;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime sed voluptas 
+        explicabo illo iusto sapiente, saepe reprehenderit voluptate fugit veniam quasi fugiat 
+        adipisci eius vel totam expedita! Mollitia, eveniet ducimus.&lt;/p&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex016/cor03.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="style-cores03-tab-pane" role="tabpanel" aria-labelledby="style-cores03-tab" tabindex="0">
+                        <pre>
+                            <code id="codigo4.3">
+@charset "UTF-8";
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: linear-gradient(to right, #007369, #008C72);
+}
+
+main {
+    background-color: white;
+    width: 600px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: auto;
+    box-shadow: 5px 5px 10px #003740a9;
+}
+
+h1 {
+    text-align: center;
+    color: #02A676;
+    text-shadow: 1px 1px 2px #025e42a9;
+}
+
+h2 {
+    color: #005A5B;
+}
+
+p {
+    text-align: justify;
+}
+                            </code>
+                        </pre>
+                        <!-- <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex025/formulario10.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div> -->
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa display-6 m-0 p-2 border border-secondary rounded-top-4" id="fontesdiferentes">Fontes Diferentes</h2>
+            <div class="sub p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy5" class="rounded-2 p-1">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo p-2 text-light rounded-bottom-3 border border-secondary">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="fonte01-tab" data-bs-toggle="tab" data-bs-target="#fonte01-tab-pane" type="button" role="tab" aria-controls="fonte01-tab-pane" aria-selected="true">Fonte01</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="fonte02-tab" data-bs-toggle="tab" data-bs-target="#fonte02-tab-pane" type="button" role="tab" aria-controls="fonte02-tab-pane" aria-selected="false">Fonte02</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="fonte01-tab-pane" role="tabpanel" aria-labelledby="fonte01-tab" tabindex="0">
+                        <pre class="p-1">
+                            <code id="codigo5">
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title>Fonte&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            /*
+            Medidas absolutas:
+            cm, mm, in, px, pt, pc
+            Mediddas relativas:
+            rem, em, ex, vw, vh, %
+            */
+            font-size: 1.4em;
+        }
+        h1, h2 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        p {
+            font: italic bolder 1em 'Work Sans', sans-serif;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+    &lt;body&gt;
+    &lt;h1&gt;Testando fontes&lt;/h1&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Possimus, ex quaerat magnam cupiditate labore tenetur sequi hic cum 
+    earum in. Exercitationem illum beatae laborum blanditiis tenetur 
+    facere atque laudantium minima? Lorem ipsum dolor sit amet consectetur, 
+    adipisicing elit. Optio odio libero enim, reiciendis quaerat vitae sit 
+    modi a ratione totam neque nesciunt eligendi! Officiis aperiam et 
+    voluptate, praesentium sed aliquam? Lorem ipsum dolor sit amet consectetur 
+    adipisicing elit. Accusamus illo eos possimus dolorem dignissimos 
+    facere enim iure nostrum earum quo voluptatum fugiat reprehenderit 
+    doloremque quaerat non totam mollitia, at est?&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+    Eligendi, suscipit aperiam? Ducimus, delectus, magnam velit, veritatis 
+    tenetur aliquam ullam sed nisi molestiae architecto quod. Fugiat possimus 
+    magnam maiores iste modi!&lt;/p&gt;
+    &lt;h2&gt;Segunda parte&lt;/h2&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati 
+    deleniti magni sunt ad facere ab nisi harum quasi ipsam excepturi. Recusandae 
+    quos animi voluptates alias dolore esse id velit culpa. Lorem ipsum dolor sit 
+    amet consectetur adipisicing elit. Unde cumque quibusdam voluptas, laboriosam repellendus 
+    laudantium, error similique praesentium ea, ab quam? Asperiores 
+    dignissimos impedit vel similique cum quia, dicta nobis.&lt;/p&gt;
+&lt;/body&gt;
+                            </code>
+                          </pre>
+                          <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex017/index.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="fonte02-tab-pane" role="tabpanel" aria-labelledby="fonte02-tab" tabindex="0">
+                        <pre class="p-1">
+                            <code id="codigo5.1">
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Alinhamentos&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: left;
+        }
+        h1 {
+            text-align: center;
+        }
+        h2 {
+            text-align: right;
+        }
+        p {
+            text-align: justify;
+            text-indent: 30px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Teste&lt;/h1&gt;
+    &lt;h2&gt;Teste do teste&lt;/h2&gt;
+    &lt;p&gt;Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+    Ratione aliquid expedita nulla odit mollitia ea tempore dicta quibusdam 
+    quas commodi perferendis, laboriosam, necessitatibus impedit fugit blanditiis! 
+    Aliquam harum quo fuga? Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+    Illum non, eius quibusdam eum fugiat, voluptatibus itaque hic voluptatum 
+    excepturi totam rem quisquam! Ipsum accusamus enim error rem tenetur laudantium eaque. 
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident eius ullam 
+    excepturi minima at aperiam nihil, blanditiis ipsa, ex accusamus quas autem, 
+    eligendi magni. Facilis ea adipisci repellat iure magni.&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rem 
+    obcaecati, earum voluptate nisi sunt facere reprehenderit ab consequuntur ipsam 
+    ratione quaerat labore soluta molestias sequi, et rerum delectus hic. Lorem ipsum 
+    dolor, sit amet consectetur adipisicing elit. Ratione suscipit dolores aperiam 
+    magni nostrum sit facilis quia, architecto dignissimos ad quo velit at esse vero 
+    exercitationem? Blanditiis in tempora saepe? Lorem ipsum, dolor sit amet consectetur 
+    adipisicing elit. Sequi eligendi distinctio repudiandae deserunt illo, quae 
+    voluptas similique quod fuga qui hic dolor. Cum numquam voluptatem ipsa. 
+    Laudantium corrupti tenetur eius.&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum quo facere 
+    odio veniam. Nostrum impedit exercitationem vitae rem earum aliquam vero! Exercitationem 
+    quibusdam non ullam sit sint error sequi debitis! Lorem ipsum dolor sit amet, consectetur 
+    adipisicing elit. Esse ratione distinctio tempora dolorem voluptas obcaecati architecto 
+    debitis vitae veritatis iste cumque, deleniti officia assumenda aspernatur adipisci 
+    doloremque provident, tenetur incidunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Quisquam delectus repellat at inventore saepe architecto similique, odio, recusandae 
+    provident rem laudantium sunt animi corrupti hic, ad nihil? Qui, adipisci repellat.&lt;/p&gt;
+&lt;/body&gt;
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex017/fonte02.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa display-6 m-0 p-2 border border-secondary rounded-top-4" id="fontesexter">Fontes externas</h2>
+            <div class="sub p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy6" class="rounded-2 p-1">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo p-2 text-light rounded-bottom-3 border border-secondary">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="fonte1-tab" data-bs-toggle="tab" data-bs-target="#fonte1-tab-pane" type="button" role="tab" aria-controls="fonte1-tab-pane" aria-selected="true">Fonte1</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="fonte2-tab" data-bs-toggle="tab" data-bs-target="#fonte2-tab-pane" type="button" role="tab" aria-controls="fonte2-tab-pane" aria-selected="false">Fonte2</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="fonte1-tab-pane" role="tabpanel" aria-labelledby="fonte1-tab" tabindex="0">
+                        <pre>
+                            <code class="codigo6">
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Fontes do Google&lt;/title&gt;
+    &lt;style&gt;
+        @import url('https://fonts.googleapis.com/css2?family=Nova+Oval&family=Tilt+Prism&display=swap');
+        h1 {
+font-family: 'Tilt Prism', cursive;
+        }
+        p {
+font-family: 'Nova Oval', cursive;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+    &lt;body&gt;
+    &lt;h1&gt;Título&lt;/h1&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, 
+    qui autem porro voluptatem est consectetur quia enim saepe debitis minus 
+    voluptate corrupti nobis aliquam reiciendis ex, architecto suscipit reprehenderit laboriosam!&lt;/p&gt;
+&lt;/body&gt;
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex018/font1.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="fonte2-tab-pane" role="tabpanel" aria-labelledby="fonte2-tab" tabindex="0">
+                        <pre class="p-1">
+                            <code id="codigo6.1">
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title>Fontes baixadas&lt;/title&gt;
+    &lt;style&gt;
+        @font-face {
+font-family: 'carreta';
+src: url('fonts/Transformers Movie.ttf') format('truetype');
+        }
+        h1 {
+font-family: 'carreta';
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;OPAAAAA&lt;/h1&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    Ullam numquam modi facere, eaque ipsum sapiente deserunt expedita eius 
+    deleniti quibusdam aliquid veritatis eos. Voluptate eligendi impedit 
+    beatae! Laudantium, suscipit dolores!&lt;/p&gt;
+&lt;/body&gt;
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex018/font2.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa display-6 m-0 p-2 border border-secondary rounded-top-4" id="box">Estilizando uma box</h2>
+            <div class="sub p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy7" class="rounded-2 p-1">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo p-2 text-light rounded-bottom-3 border border-secondary">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="index-box-tab" data-bs-toggle="tab" data-bs-target="#index-box-tab-pane" type="button" role="tab" aria-controls="index-box-tab-pane" aria-selected="true">index-box</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="style-box-tab" data-bs-toggle="tab" data-bs-target="#style-box-tab-pane" type="button" role="tab" aria-controls="style-box-tab-pane" aria-selected="false">style-box</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="index-box-tab-pane" role="tabpanel" aria-labelledby="index-box-tab" tabindex="0">
+                        <pre>
+                            <code class="codigo7">
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title>Teste&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;main&gt;
+        &lt;h1 id="principal&gt;Aqui vai uma caixa bem estilosa&lt;/h1&gt;
+        &lt;h1 class="partes"&gt;Primeria parte&lt;/h1&gt;
+        &lt;h2 class="primeira"&gt;Olha essa caixa&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Enim, rem neque eos quia quis magnam esse cupiditate illum veritatis 
+        architecto soluta autem id. Sed dolorem qui, dolor quae architecto nobis!&lt;/p&gt;
+        &lt;h2 class="segunda"&gt;Olha essa caixa&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Enim, rem neque eos quia quis magnam esse cupiditate illum veritatis 
+        architecto soluta autem id. Sed dolorem qui, dolor quae architecto nobis!&lt;/p&gt;
+        &lt;h2 class="terceira"&gt;Olha essa caixa&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Enim, rem neque eos quia quis magnam esse cupiditate illum veritatis 
+        architecto soluta autem id. Sed dolorem qui, dolor quae architecto nobis!&lt;/p&gt;
+        &lt;p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Natus tempore doloribus voluptas dignissimos, modi tempora dolores 
+        repudiandae? Ex vel nemo laboriosam iure commodi, quae eius odit, 
+        fugit omnis recusandae neque.&lt;/p&gt;
+        &lt;h1 class="partes"&gt;Segunda parte&lt;/h1&gt;
+        &lt;h2 class="primeira"&gt;Olha essa caixa&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Beatae sint earum aspernatur natus dolores? Sequi ipsum laudantium nemo 
+        rerum consequatur, adipisci rem voluptate facilis reprehenderit? 
+        Inventore minima est sint quae.&lt;/p&gt;
+        &lt;h2 class="segunda"&gt;Olha essa caixa&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, 
+        rem neque eos quia quis magnam esse cupiditate illum veritatis architecto 
+        soluta autem id. Sed dolorem qui, dolor quae architecto nobis!&lt;/p&gt;
+        &lt;h2 class="terceira"&gt;Olha essa caixa&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, 
+        rem neque eos quia quis magnam esse cupiditate illum veritatis architecto 
+        soluta autem id. Sed dolorem qui, dolor quae architecto nobis!&lt;/p&gt;
+        &lt;p&gt;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium 
+        hic assumenda sint veritatis? Modi quos rem enim aut suscipit, neque 
+        voluptatum quam magnam impedit quo ut natus facilis vero veritatis. Lorem 
+        ipsum dolor sit, amet consectetur adipisicing elit. Pariatur corrupti 
+        vero quod deserunt fuga optio veniam dolore dicta voluptas modi perspiciatis 
+        deleniti reprehenderit ullam cum excepturi facilis, tempora, voluptate similique.&lt;/p&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex019/indez.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="style-box-tab-pane" role="tabpanel" aria-labelledby="style-box-tab" tabindex="0">
+                        <pre>
+                            <code id="codigo7.1">
+@charset "UTF-8";
+
+body {
+background-image: linear-gradient(to top, red, rgb(154, 57, 57));
+background-attachment: fixed;
+}
+main {
+background-color: white;
+width: 600px;
+margin: auto;
+padding: 10px;
+border-radius: 15px;
+box-shadow: 5px 5px 3px rgba(155, 1, 1, 0.652);
+}
+
+h1 {
+text-align: center;
+}
+
+h1#principal {
+background-color: black;
+color: white;
+}
+
+.partes {
+background-color: rgba(128, 0, 128, 0.549);
+}
+
+.primeira {
+color: brown;
+}
+
+.segunda {
+color: cadetblue;
+}
+
+.terceira {
+color: crimson;
+}
+                            </code>
+                        </pre>
+                        <!-- <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex025/formulario10.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div> -->
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa display-6 m-0 p-2 border border-secondary rounded-top-4" id="testecss">Testando CSS</h2>
+            <div class="sub p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy8" class="rounded-2 p-1">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo p-2 text-light rounded-bottom-3 border border-secondary">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="esconde-tab" data-bs-toggle="tab" data-bs-target="#esconde-tab-pane" type="button" role="tab" aria-controls="esconde-tab-pane" aria-selected="true">Esconde</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="links-tab" data-bs-toggle="tab" data-bs-target="#links-tab-pane" type="button" role="tab" aria-controls="links-tab-pane" aria-selected="false">Links</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="pseu-tab" data-bs-toggle="tab" data-bs-target="#pseu-tab-pane" type="button" role="tab" aria-controls="pseu-tab-pane" aria-selected="false">Pseu</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="esconde-tab-pane" role="tabpanel" aria-labelledby="esconde-tab" tabindex="0">
+                        <pre>
+                            <code id="codigo8">
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title>Outro exemplo&lt;/title&gt;
+    &lt;style&gt;
+        div {
+background-color: antiquewhite;
+        }
+        div > p {
+display: none;
+        }
+        div:hover > p {
+display: block;
+background-color: black;
+color: white;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Aqui vai uma demonstração de possiblidades&lt;/h1&gt;
+    &lt;p&gt;Parágrafo genérico&lt;/p&gt;
+    &lt;div&gt;
+        Linha diferenciada...
+    &lt;p&gt;Parágrafo escondido!&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;p&gt;Parágrafo genérico&lt;/p&gt;
+&lt;body&gt;
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex020/esconde.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="links-tab-pane" role="tabpanel" aria-labelledby="links-tab" tabindex="0">
+                        <pre>
+                            <code id="codigo8.1">
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Links apenas&lt;/title&gt;
+    &lt;style&gt;
+        body {
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-weight: bold;
+        }
+        a {
+color: red;
+text-decoration: none;
+        }
+        a:visited {
+color: green;
+        }
+        a:hover {
+color: black;
+text-decoration: underline;
+        }
+        a:active {
+color: aqua;
+        }
+        .especial::after {
+content: '⍟'
+        }
+        .especial::before {
+content: '⍟';
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h&gt;Alguns links&lt;/h1&gt;
+    &lt;ul&gt;
+    &lt;li&gt;&lt;a href="https://www.youtube.com" target="_blank"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="https://cryskawaii.github.io/Crys-Dev/" target="_blank" class="especial"&gt;Podium&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="https://github.com/CrysKawaii" target="_blank"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex020/links.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pseu-tab-pane" role="tabpanel" aria-labelledby="pseu-tab" tabindex="0">
+                        <pre>
+                            <code id="codigo8.2">
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Pseudo-classes&lt;/title&gt;
+    &lt;style&gt;
+        div {
+background-color: lightgray;
+display: inline-block;
+border: 1px solid black;
+text-align: center;
+height: 200px;
+width: 200px;
+        }
+        div:focus {
+background-color: rebeccapurple;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;d01&lt;/div&gt;
+    &lt;div&gt;d02&lt;/div&gt;
+    &lt;div&gt;d03&lt;/div&gt;
+&lt;/body&gt;
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex020/pseu.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa display-6 m-0 p-2 border border-secondary rounded-top-4" id="modelscaixa">Modelos de caixa</h2>
+            <div class="sub p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy9" class="rounded-2 p-1">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo p-2 text-light rounded-bottom-3 border border-secondary">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="caixa01-tab" data-bs-toggle="tab" data-bs-target="#caixa01-tab-pane" type="button" role="tab" aria-controls="caixa01-tab-pane" aria-selected="true">Caixa01</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="caixa02-tab" data-bs-toggle="tab" data-bs-target="#caixa02-tab-pane" type="button" role="tab" aria-controls="caixa02-tab-pane" aria-selected="false">Caixa02</button>
+                    </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="caixa01-tab-pane" role="tabpanel" aria-labelledby="caixa01-tab" tabindex="0">
+                    <pre>
+                        <code id="codigo9">
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Caixitas&lt;/title&gt;
+    &lt;style&gt;
+        h1 {
+            background-color: lightgray;
+            width: 400px;
+            height: 100px;
+            border: 10px solid black;
+            padding: 10px;
+        }
+        a {
+            margin: 10px;
+            outline: 2px dotted red;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Isto é uma caixa box-level&lt;/h1&gt;
+    &lt;p&gt;Um parágrafo també é um modelo de caixa box-level, 
+    porém um &lt;a href="#"&gt;link não é&lt;/a&gt;. Deu pra entender?&lt;/p&gt;
+&lt;/body&gt;
+                        </code>
+                    </pre>
+                    <div class="d-flex flex-row-reverse align-items-center my-2">
+                        <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex021/caixa01.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="caixa02-tab-pane" role="tabpanel" aria-labelledby="caixa02-tab" tabindex="0">
+                    <pre>
+                        <code id="codigo9.1">
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Tags de agrupamento&lt;/title&gt;
+    &lt;style&gt;
+    body {
+        margin: 3px;
+        background-image: linear-gradient(to bottom, rgb(255, 112, 112), rgba(111, 6, 6, 0.525));
+        background-attachment: fixed;
+        font-size: 1.3em;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    header {
+        background-color: rgb(179, 169, 169);
+        text-align: center;
+        margin-bottom: 10px;
+        box-shadow: 4px 3px 1px rgba(81, 3, 3, 0.355);
+    }
+
+    nav{
+        background-color: rgb(174, 78, 78);
+        text-align: center;
+    }
+
+    nav > a {
+        text-decoration: none;
+        font-weight: bold;
+        color: aqua;
+        margin: 20px;
+    }
+
+    a:hover::before{
+        content: '->';
+    }
+
+    a:hover::after {
+        content: '<-';
+    }
+
+    nav > a:hover {
+        text-decoration: underline;
+    }
+
+    main {
+        background-color: rgb(181, 166, 166);
+        padding: 10px;
+        border-radius: 15px 0px;
+        box-shadow: 1px 1px 2px rgba(110, 6, 6, 0.466);
+    }
+
+    footer {
+        background-color: white;
+        text-align: center;
+    }
+
+    section#parteUm > p {
+        background-color: rgb(221, 138, 138);
+        text-align: justify;
+    }
+
+    article > p {
+        background-color: rgb(155, 183, 208);
+        text-align: justify;
+    }
+    footer {
+        font-size: 1.5em;
+        background-color: lightcoral;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Meu site bonitinho&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;a href="#">Link&lt;/a&gt;
+            &lt;a href="#">Link&lt;/a&gt;
+            &lt;a href="#">Link&lt;/a&gt;
+            &lt;a href="#">Link&lt;/a&gt;
+            &lt;a href="#">Link&lt;/a&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+    &lt;section id="parteUm"&gt;
+        &lt;h2&gt;Este site está sendo feito com muita paciência...&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Sint delectus aliquid quo suscipit esse veritatis enim dolores numquam. 
+        Doloribus assumenda cumque, eos cupiditate totam minima necessitatibus 
+        libero quas sit aliquam?&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;section id="parteDois"&gt;
+        &lt;h2&gt;Contemplem&lt;/h2&gt;
+        &lt;article&gt;
+            &lt;p&gt;Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+            Eveniet, reiciendis eum! Iure, necessitatibus rem! At cumque sint, 
+            itaque numquam voluptatibus temporibus! In mollitia ducimus iure 
+            eveniet necessitatibus placeat accusamus nulla. Lorem ipsum dolor 
+            sit amet consectetur, adipisicing elit. Possimus facilis itaque 
+            aliquid non sit dolor, veritatis soluta vel. Temporibus sit ut 
+            sunt commodi laboriosam velit exercitationem distinctio reiciendis explicabo. Ipsa.&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/section&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+        &lt;p&gt;Desenvolvido por CrysKawaii&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;body&gt;
+                        </code>
+                    </pre>
+                    <div class="d-flex flex-row-reverse align-items-center my-2">
+                        <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex021/caixa02.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa display-6 m-0 p-2 border border-secondary rounded-top-4" id="fundos">Fundos</h2>
+            <div class="sub p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy10" class="rounded-2 p-1">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo p-2 text-light rounded-bottom-3 border border-secondary">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="fundo01-tab" data-bs-toggle="tab" data-bs-target="#fundo01-tab-pane" type="button" role="tab" aria-controls="fundo01-tab-pane" aria-selected="true">Fundo01</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="fundo02-tab" data-bs-toggle="tab" data-bs-target="#fundo02-tab-pane" type="button" role="tab" aria-controls="fundo02-tab-pane" aria-selected="false">Fundo02</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="fundo03-tab" data-bs-toggle="tab" data-bs-target="#fundo03-tab-pane" type="button" role="tab" aria-controls="fundo03-tab-pane" aria-selected="false">Fundo03</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="fundo04-tab" data-bs-toggle="tab" data-bs-target="#fundo04-tab-pane" type="button" role="tab" aria-controls="fundo04-tab-pane" aria-selected="false">Fundo04</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="fundo05-tab" data-bs-toggle="tab" data-bs-target="#fundo05-tab-pane" type="button" role="tab" aria-controls="fundo05-tab-pane" aria-selected="false">Fundo05</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="fundo06-tab" data-bs-toggle="tab" data-bs-target="#fundo06-tab-pane" type="button" role="tab" aria-controls="fundo06-tab-pane" aria-selected="false">Fundo06</button>
+                    </li>
+                </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="fundo01-tab-pane" role="tabpanel" aria-labelledby="fundo01-tab" tabindex="0">
+                    <pre>
+                        <code id="codigo10">
+&lt;head&gt;
+    &lt;style&gt;
+        body {
+            background-image: url(images/pattern003.png);
+        }
+        .quadrado {
+            border: 2px solid black;
+            display: inline-block;
+            width: 300px;
+            height: 300px;
+        }
+        #q1 {
+            background-color: rebeccapurple;
+        }
+        #q2 {
+            background-image: linear-gradient(to bottom, blue, brown);
+        }
+        #q3 {
+            background-image: url('images/pattern001.png');
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="quadrado" id="q1"&gt;&lt;/div&gt;
+    &lt;div class="quadrado" id="q2"&gt;&lt;/div&gt;
+    &lt;div class="quadrado" id="q3"&gt;&lt;/div&gt;
+&lt;body&gt;
+                        </code>
+                    </pre>
+                    <div class="d-flex flex-row-reverse align-items-center my-2">
+                        <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex022/fundo1.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="fundo02-tab-pane" role="tabpanel" aria-labelledby="fundo02-tab" tabindex="0">
+                <pre>
+                    <code id="codigo10.1">
+&lt;style&gt;
+    body {
+        background-image: url('https://static-s.aa-cdn.net
+        /img/gp/20600011159092/xY3YehcPCkL7d12YXDBwmnNL
+        KDhwKO1TnKeRZTo-Tzacvm7j-r1-_IttYWypbc9fpWN-?v=1');
+        background-size: 100px 100px;
+        background-repeat: repeat-x;
+    }
+&lt;/style&gt;
+                    </code>
+                </pre>
+                <div class="d-flex flex-row-reverse align-items-center my-2">
+                    <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex022/fundo2.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                </div>
+                </div>
+                <div class="tab-pane fade" id="fundo03-tab-pane" role="tabpanel" aria-labelledby="fundo03-tab" tabindex="0">
+                    <pre>
+                        <code id="codigo10.2">
+&lt;style&gt;
+    .quadrados {
+        background-image: url('https://static-s
+        .aa-cdn.net/img/gp/20600011159092/xY3Yeh
+        cPCkL7d12YXDBwmnNLKDhwKO1TnKeRZTo-Tzacvm7j-r1-_IttYWypbc9fpWN-?v=1');
+        background-repeat: no-repeat;
+        height: 200px;
+        border: 2px solid black;
+        margin: 10px;
+        border-radius: 15px;
+    }
+    #q1 {
+        background-position: center;
+    }
+    #q2 {
+        background-position: right bottom;
+    }
+    #q3 {
+        background-position: left top;
+    }
+    #q4 {
+        background-position: right top;
+    }
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;div class="quadrados" id="q1"&gt;&lt;/div&gt;
+    &lt;div class="quadrados" id="q2"&gt;&lt;/div&gt;
+    &lt;div class="quadrados" id="q3"&gt;&lt;/div&gt;
+    &lt;div class="quadrados" id="q4"&gt;&lt;/div&gt;
+&lt;body&gt;
+                        </code>
+                    </pre>
+                    <div class="d-flex flex-row-reverse align-items-center my-2">
+                        <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex022/fundo3.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="fundo04-tab-pane" role="tabpanel" aria-labelledby="fundo04-tab" tabindex="0">
+                    <pre>
+                        <code id="codigo10.3">
+&lt;head&gt;
+&lt;style&gt;
+    body {
+        border: 1px dotted black;
+        height: 97vh;
+    }
+    .quadrados {
+        background-image: url('https://static-s.aa-c
+        dn.net/img/gp/20600011159092/xY3YehcPCkL7d12
+        YXDBwmnNLKDhwKO1TnKeRZTo-Tzacvm7j-r1-_IttYWypbc9fpWN-?v=1');
+
+        height: 84px;
+        background-repeat: no-repeat;
+    }
+    #q2 {
+        background-position: center top;
+    }
+    #q3 {
+        background-position: center;
+    }
+    #q4 {
+        background-position: center bottom;
+    }
+    #q5 {
+        background-position: center right;
+    }
+    #q8 {
+        background-position: right bottom;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="quadrados" id="q1"&gt;&lt;/div&gt;
+    &lt;div class="quadrados" id="q2"&gt;&lt;/div&gt;
+    &lt;div class="quadrados" id="q3"&gt;&lt;/div&gt;
+    &lt;div class="quadrados" id="q4"&gt;&lt;/div&gt;
+    &lt;div class="quadrados" id="q5"&gt;&lt;/div&gt;
+    &lt;div class="quadrados" id="q6"&gt;&lt;/div&gt;
+    &lt;div class="quadrados" id="q7"&gt;&lt;/div&gt;
+    &lt;div class="quadrados" id="q8"&gt;&lt;/div&gt;
+&lt;/body&gt;
+                        </code>
+                    </pre>
+                    <div class="d-flex flex-row-reverse align-items-center my-2">
+                        <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex022/fundo4.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="fundo05-tab-pane" role="tabpanel" aria-labelledby="fundo05-tab" tabindex="0">
+                    <pre>
+                        <code id="codigo10.4">
+&lt;style&gt;
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        height: 100vh;
+        background-color: black;
+        background-image: url(images/anime.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    main {
+        background-color: white;
+        width: 400px;
+        padding: 10px;
+        border: 2px solid red;
+        border-radius: 22px;
+        margin: auto;
+    }
+&lt;/style&gt;
+&lt;main&gt;
+    &lt;h1&gt;HEHEHA&lt;/h1&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur 
+    adipisicing elit. Totam accusantium voluptatibus enim, 
+    accusamus blanditiis, pariatur obcaecati quidem quas 
+    soluta ipsum explicabo, necessitatibus non dolore? Nisi 
+    culpa animi voluptatem molestiae nulla! Lorem ipsum dolor 
+    sit amet consectetur, adipisicing elit. Totam corrupti, 
+    praesentium distinctio doloremque pariatur suscipit laboriosam, 
+    dolorem quisquam neque ullam nobis quibusdam reprehenderit eos 
+    sed officia id! Quis, illum fugit. Lorem ipsum dolor sit amet 
+    consectetur adipisicing elit. Incidunt aspernatur dolores, eius, 
+    ipsum fugit, velit quidem eligendi beatae veniam eos ullam 
+    temporibus unde nobis ipsam. Quod at delectus voluptates cupiditate.&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur 
+    adipisicing elit. Totam accusantium voluptatibus enim, accusamus 
+    blanditiis, pariatur obcaecati quidem quas soluta ipsum explicabo, 
+    necessitatibus non dolore? Nisi culpa animi voluptatem molestiae 
+    nulla! Lorem ipsum dolor sit amet consectetur, adipisicing elit. T
+    otam corrupti, praesentium distinctio doloremque pariatur suscipit 
+    laboriosam, dolorem quisquam neque ullam nobis quibusdam reprehenderit 
+    eos sed officia id! Quis, illum fugit. Lorem ipsum dolor sit amet 
+    consectetur adipisicing elit. Incidunt aspernatur dolores, eius, 
+    ipsum fugit, velit quidem eligendi beatae veniam eos ullam temporibus 
+    unde nobis ipsam. Quod at delectus voluptates cupiditate.&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur 
+    adipisicing elit. Totam accusantium voluptatibus enim, accusamus 
+    blanditiis, pariatur obcaecati quidem quas soluta ipsum explicabo, 
+    necessitatibus non dolore? Nisi culpa animi voluptatem molestiae nulla!
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam corrupti, 
+        praesentium distinctio doloremque pariatur suscipit laboriosam, dolorem 
+        quisquam neque ullam nobis quibusdam reprehenderit eos sed officia id! 
+        Quis, illum fugit. Lorem ipsum dolor sit amet consectetur adipisicing 
+        elit. Incidunt aspernatur dolores, eius, ipsum fugit, velit quidem 
+        eligendi beatae veniam eos ullam temporibus unde nobis ipsam. Quod at 
+        delectus voluptates cupiditate.&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur 
+    adipisicing elit. Totam accusantium voluptatibus enim, accusamus 
+    blanditiis, pariatur obcaecati quidem quas soluta ipsum explicabo, 
+    necessitatibus non dolore? Nisi culpa animi voluptatem molestiae 
+    nulla! Lorem ipsum dolor sit amet consectetur, adipisicing elit. T
+    otam corrupti, praesentium distinctio doloremque pariatur suscipit 
+    laboriosam, dolorem quisquam neque ullam nobis quibusdam reprehenderit 
+    eos sed officia id! Quis, illum fugit. Lorem ipsum dolor sit amet 
+    consectetur adipisicing elit. Incidunt aspernatur dolores, eius, 
+    ipsum fugit, velit quidem eligendi beatae veniam eos ullam temporibus 
+    unde nobis ipsam. Quod at delectus voluptates cupiditate.&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur 
+    adipisicing elit. Totam accusantium voluptatibus enim, accusamus 
+    blanditiis, pariatur obcaecati quidem quas soluta ipsum explicabo, 
+    necessitatibus non dolore? Nisi culpa animi voluptatem molestiae nulla! 
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam corrupti,
+        praesentium distinctio doloremque pariatur suscipit laboriosam, dolorem 
+        quisquam neque ullam nobis quibusdam reprehenderit eos sed officia id! 
+        Quis, illum fugit. Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Incidunt aspernatur dolores, eius, ipsum fugit, velit quidem 
+        eligendi beatae veniam eos ullam temporibus unde nobis ipsam. Quod 
+        at delectus voluptates cupiditate.&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Totam accusantium voluptatibus enim, accusamus blanditiis, pariatur 
+    obcaecati quidem quas soluta ipsum explicabo, necessitatibus non dolore? 
+    Nisi culpa animi voluptatem molestiae nulla! Lorem ipsum dolor sit amet 
+    consectetur, adipisicing elit. Totam corrupti, praesentium distinctio 
+    doloremque pariatur suscipit laboriosam, dolorem quisquam neque ullam n
+    obis quibusdam reprehenderit eos sed officia id! Quis, illum fugit. 
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt 
+    aspernatur dolores, eius, ipsum fugit, velit quidem eligendi beatae 
+    veniam eos ullam temporibus unde nobis ipsam. Quod at delectus voluptates 
+    cupiditate.&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Totam accusantium voluptatibus enim, accusamus blanditiis, pariatur 
+    obcaecati quidem quas soluta ipsum explicabo, necessitatibus non dolore? 
+    Nisi culpa animi voluptatem molestiae nulla! Lorem ipsum dolor sit amet 
+    consectetur, adipisicing elit. Totam corrupti, praesentium distinctio 
+    doloremque pariatur suscipit laboriosam, dolorem quisquam neque ullam 
+    nobis quibusdam reprehenderit eos sed officia id! Quis, illum fugit. 
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt 
+    aspernatur dolores, eius, ipsum fugit, velit quidem eligendi beatae 
+    veniam eos ullam temporibus unde nobis ipsam. Quod at delectus voluptates 
+    cupiditate.&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Totam accusantium voluptatibus enim, accusamus blanditiis, pariatur 
+    obcaecati quidem quas soluta ipsum explicabo, necessitatibus non 
+    dolore? Nisi culpa animi voluptatem molestiae nulla! Lorem ipsum 
+    dolor sit amet consectetur, adipisicing elit. Totam corrupti, 
+    praesentium distinctio doloremque pariatur suscipit laboriosam, 
+    dolorem quisquam neque ullam nobis quibusdam reprehenderit eos sed 
+    officia id! Quis, illum fugit. Lorem ipsum dolor sit amet consectetur 
+    adipisicing elit. Incidunt aspernatur dolores, eius, ipsum fugit, 
+    velit quidem eligendi beatae veniam eos ullam temporibus unde nobis 
+    ipsam. Quod at delectus voluptates cupiditate.&lt;/p&gt;
+&lt;/main&gt;
+                        </code>
+                    </pre>
+                    <div class="d-flex flex-row-reverse align-items-center my-2">
+                        <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex022/fundo6.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="fundo06-tab-pane" role="tabpanel" aria-labelledby="fundo06-tab" tabindex="0">
+                    <pre>
+                        <code id="codigo10.5">
+&lt;style&gt;
+    #conteiner {
+        background-color: red;
+        padding: 10px;
+        width: 680px;
+        height: 94vh;
+    }
+    #conteudo {
+        position: absolute;
+        background-color: orange;
+        width: 300px;
+        height: 150px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;section id="conteiner"&gt;
+        &lt;article id="conteudo"&gt;
+        &lt;/article&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+                        </code>
+                    </pre>
+                    <div class="d-flex flex-row-reverse align-items-center my-2">
+                        <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex022/fundo7.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa display-6 m-0 p-2 border border-secondary rounded-top-4" id="tabelas">Tabelas</h2>
+            <div class="sub p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy11" class="rounded-2 p-1">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo p-2 text-light rounded-bottom-3 border border-secondary">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="tabela01-tab" data-bs-toggle="tab" data-bs-target="#tabela01-tab-pane" type="button" role="tab" aria-controls="tabela01-tab-pane" aria-selected="true">Tabela01</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tabela02-tab" data-bs-toggle="tab" data-bs-target="#tabela02-tab-pane" type="button" role="tab" aria-controls="tabela02-tab-pane" aria-selected="false">Tabela02</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tabela03-tab" data-bs-toggle="tab" data-bs-target="#tabela03-tab-pane" type="button" role="tab" aria-controls="tabela03-tab-pane" aria-selected="false">Tabela03</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tabela04-tab" data-bs-toggle="tab" data-bs-target="#tabela04-tab-pane" type="button" role="tab" aria-controls="tabela04-tab-pane" aria-selected="false">Tabela04</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tabela05-tab" data-bs-toggle="tab" data-bs-target="#tabela05-tab-pane" type="button" role="tab" aria-controls="tabela05-tab-pane" aria-selected="false">Tabela05</button>
+                    </li>
+                </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="tabela01-tab-pane" role="tabpanel" aria-labelledby="tabela01-tab" tabindex="0">
+                    <pre>
+                        <code id="codigo11">
+&lt;style&gt;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        table {
+            width: 600px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th {
+            background-color: grey;
+            color: white;
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .mulheres {
+            border-color: blueviolet;
+        }
+
+        .homens {
+            border-color: crimson;
+        }
+    &lt;/style&gt;
+&lt;body&gt;           
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Grupo&lt;/th&gt;
+            &lt;th scope="col"&gt;Nomes&lt;/th&gt;
+            &lt;th colspan="3" scope="colgroup"&gt;Filmes&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th class="mulheres" rowspan="3" scope="rowgroup"&gt;Mulheres&lt;/th&gt;
+            &lt;td class="mulheres"&gt;Ana Maria Santos&lt;/td&gt;
+            &lt;td class="mulheres"&gt;Alien&lt;/td&gt;
+            &lt;td class="mulheres"&gt;Rambo&lt;/td&gt;
+            &lt;td class="mulheres"&gt;Vingadores&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class="mulheres"&gt;Beatriz Souza&lt;/td&gt;
+            &lt;td class="mulheres"&gt;Hulk&lt;/td&gt;
+            &lt;td class="mulheres"&gt;Inceptoin&lt;/td&gt;
+            &lt;td class="mulheres"&gt;Batman&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class="mulheres"&gt;Cláudia Melo&lt;/td&gt;
+            &lt;td class="mulheres"&gt;Oblivion&lt;/td&gt;
+            &lt;td class="mulheres"&gt;Matrix&lt;/td&gt;
+            &lt;td class="mulheres"&gt;Big Hero&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th class="homens" rowspan="3" scope="rowgroup"&gt;Homens&lt;/th&gt;
+            &lt;td class="homens"&gt;Bruno Mendonça&lt;/td&gt;
+            &lt;td class="homens"&gt;Intocáveis&lt;/td&gt;
+            &lt;td class="homens"&gt;Amnésia&lt;/td&gt;
+            &lt;td class="homens"&gt;Gladiador&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class="homens"&gt;Daniel Lourenço&lt;/td&gt;
+            &lt;td class="homens"&gt;Wall-E&lt;/td&gt;
+            &lt;td class="homens"&gt;Oldboy&lt;/td&gt;
+            &lt;td class="homens"&gt;Dangal&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class="homens"&gt;Fábiano Mota&lt;/td&gt;
+            &lt;td class="homens"&gt;Star Wars 5&lt;/td&gt;
+            &lt;td class="homens"&gt;Taxi Driver&lt;/td&gt;
+            &lt;td class="homens"&gt;Toy Story&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+                        </code>
+                    </pre>
+                    <div class="d-flex flex-row-reverse align-items-center my-2">
+                        <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex023/tabela1.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tabela02-tab-pane" role="tabpanel" aria-labelledby="tabela02-tab" tabindex="0">
+                    <pre>
+                        <code id="codigo11.1">
+&lt;style&gt;
+        table {
+            border-collapse: collapse;
+        }
+
+        tr#linha3 {
+            background-color: blanchedalmond;
+        }
+
+        td {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        td#dado2 {
+            background-color: aquamarine;
+        }
+
+        td#dado6 {
+            vertical-align: bottom;
+        }
+
+        td#dado8 {
+            text-align: right;
+        }
+    &lt;/style&gt;
+&lt;body&gt;
+    &lt;h1&gt;Tabelada&lt;/h1&gt;
+    <!--
+        Hierarquia:
+        TABLE -&gt; TABELA
+            TR -&gt; LINHA DA TABELA
+                TH -&gt; CABEÇALHO DA TABELA
+                TD -&gt; DADO DA TEBELA QUE FICA DENTRO DA LINHA
+    -->
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;td&gt;A1&lt;/td&gt;
+            &lt;td id="dado2"&gt;B1&lt;/td&gt;
+            &lt;td&gt;C1&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;A2&lt;/td&gt;
+            &lt;td&gt;B2&lt;/td&gt;
+            &lt;td id="dado6"&gt;C2&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr id="linha3"&gt;
+            &lt;td&gt;A3&lt;/td&gt;
+            &lt;td id="dado8"&gt;B3&lt;/td&gt;
+            &lt;td&gt;C3&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;A4&lt;/td&gt;
+            &lt;td&gt;B4&lt;/td&gt;
+            &lt;td&gt;C4&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+                        </code>
+                    </pre>
+                    <div class="d-flex flex-row-reverse align-items-center my-2">
+                        <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex023/tabela01.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tabela03-tab-pane" role="tabpanel" aria-labelledby="tabela03-tab" tabindex="0">
+                    <pre>
+                        <code id="codigo11.2">
+&lt;style&gt;
+
+        table {
+            border-collapse: collapse;
+            width: 150px;
+        }
+
+        td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 5px;
+        }
+    &lt;/style&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;Mesclagem de células&lt;/h1&gt;
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;td&gt;A&lt;/td&gt;
+            &lt;td colspan="2"&gt;B&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td rowspan="3"&gt;D&lt;/td&gt;
+            &lt;td&gt;E&lt;/td&gt;
+            &lt;td&gt;F&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;H&lt;/td&gt;
+            &lt;td&gt;I&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;K&lt;/td&gt;
+            &lt;td&gt;L&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+                        </code>
+                    </pre>
+                    <div class="d-flex flex-row-reverse align-items-center my-2">
+                        <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex023/tabela3.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tabela04-tab-pane" role="tabpanel" aria-labelledby="tabela04-tab" tabindex="0">
+                    <pre>
+                        <code id="codigo11.3">
+&lt;style&gt;
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table {
+            width: 400px;
+            border-collapse: collapse;
+            position: relative;
+        }
+
+        caption {
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 5px;
+            background-color: cornsilk;
+        }
+
+        thead, tfoot {
+            background-color: grey;
+            color: white;
+        }
+
+        thead > tr > th {
+            position: sticky;
+            top: 0;
+            background-color: grey;
+        }
+
+        tbody > tr:nth-child(even) {
+            background-color: lightgray;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        .numero {
+            text-align: right;
+        }
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;h1&gt;Tabelada com mais elementos&lt;/h1&gt;
+    &lt;table&gt;
+        &lt;caption&gt;População das Unidades Federativas&lt;/caption&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th scope="col"&gt;Estado&lt;/th&gt;
+                &lt;th scope="col"&gt;População&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;São Paulo&lt;/td&gt;
+                &lt;td class="numero"&gt;46.024.937&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Minas Gerais&lt;/td&gt;
+                &lt;td class="numero"&gt;20.732.660&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Rio de Janeiro&lt;/td&gt;
+                &lt;td class="numero"&gt;20.732.660&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Bahia&lt;/td&gt;
+                &lt;td class="numero"&gt;20.732.660&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Paraná&lt;/td&gt;
+                &lt;td class="numero"&gt;11.835.379&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Rio Grande do Sul&lt;/td&gt;
+                &lt;td class="numero"&gt;11.088.065&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Pernambuco&lt;/td&gt;
+                &lt;td class="numero"&gt;9.051.113&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Ceará&lt;/td&gt;
+                &lt;td class="numero"&gt;8.936.431&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Pará&lt;/td&gt;
+                &lt;td class="numero"&gt;8.442.962&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Santa Catarina&lt;/td&gt;
+                &lt;td class="numero"&gt;7.762.154&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Goiás&lt;/td&gt;
+                &lt;td class="numero"&gt;6.950.976&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Maranhão&lt;/td&gt;
+                &lt;td class="numero"&gt;6.800.605&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Espírito Santo&lt;/td&gt;
+                &lt;td class="numero"&gt;4.108.508&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Paraíba&lt;/td&gt;
+                &lt;td class="numero"&gt;4.030.961&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Amazonas&lt;/td&gt;
+                &lt;td class="numero"&gt;3.952.262&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Mato Grosso&lt;/td&gt;
+                &lt;td class="numero"&gt;3.784.239&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Rio Grande do Norte&lt;/td&gt;
+                &lt;td class="numero"&gt;3.303.953&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Piauí&lt;/td&gt;
+                &lt;td class="numero"&gt;3.270.174&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Alagoas&lt;/td&gt;
+                &lt;td class="numero"&gt;3.125.254&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Distrito Federeal&lt;/td&gt;
+                &lt;td class="numero"&gt;2.923.369&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Mato Grosso do Sul&lt;/td&gt;
+                &lt;td class="numero"&gt;2.833.742&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Sergipe&lt;/td&gt;
+                &lt;td class="numero"&gt;2.211.868&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Rondônia&lt;/td&gt;
+                &lt;td class="numero"&gt;1.616.379&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Tocantins&lt;/td&gt;
+                &lt;td class="numero"&gt;1.584.306&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Acre&lt;/td&gt;
+                &lt;td class="numero"&gt;829.780&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Amapá&lt;/td&gt;
+                &lt;td class="numero"&gt;774.268&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Roraima&lt;/td&gt;
+                &lt;td class="numero"&gt;634.805&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;tfoot&gt;
+            &lt;th scope="row"&gt;População total&lt;/th&gt;
+            &lt;td class="numero"&gt;&lt;strong&gt;218 074 470&lt;/strong&gt;&lt;/td&gt;
+        &lt;/tfoot&gt;
+    &lt;/table&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+    Et minus qui fugiat nesciunt magnam aliquam repudiandae delectus 
+    iste neque temporibus odit possimus optio maiores, aliquid velit, 
+    voluptate vel nihil animi. Lorem ipsum dolor sit amet consectetur 
+    adipisicing elit. Necessitatibus odit dolorum laborum ipsam deserunt? 
+    Omnis impedit, mollitia earum fugiat consectetur, beatae ea 
+    voluptas aliquid, enim laboriosam placeat ut soluta doloribus! 
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus
+        fugiat illo ea! Quisquam consequuntur eum nam, fugiat iusto est 
+        cum molestiae blanditiis impedit! Nihil voluptates iste aperiam 
+        eius velit itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    Quia, voluptates! Ipsam ullam quod expedita eum cupiditate dolorum, 
+    aperiam optio magni beatae fuga perspiciatis, delectus molestiae nam, 
+    sed asperiores impedit. Temporibus?&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+    Et minus qui fugiat nesciunt magnam aliquam repudiandae delectus iste
+        neque temporibus odit possimus optio maiores, aliquid velit, voluptate 
+        vel nihil animi. Lorem ipsum dolor sit amet consectetur adipisicing e
+        lit. Necessitatibus odit dolorum laborum ipsam deserunt? Omnis impedit, 
+        mollitia earum fugiat consectetur, beatae ea voluptas aliquid, enim 
+        laboriosam placeat ut soluta doloribus! Lorem ipsum dolor, sit amet 
+        consectetur adipisicing elit. Possimus fugiat illo ea! Quisquam consequuntur 
+        eum nam, fugiat iusto est cum molestiae blanditiis impedit! Nihil 
+        voluptates iste aperiam eius velit itaque. Lorem ipsum dolor sit 
+        amet, consectetur adipisicing elit. Quia, voluptates! Ipsam ullam 
+        quod expedita eum cupiditate dolorum, aperiam optio magni beatae 
+        fuga perspiciatis, delectus molestiae nam, sed asperiores impedit. 
+        Temporibus?&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+    Et minus qui fugiat nesciunt magnam aliquam repudiandae delectus 
+    iste neque temporibus odit possimus optio maiores, aliquid velit, 
+    voluptate vel nihil animi. Lorem ipsum dolor sit amet consectetur 
+    adipisicing elit. Necessitatibus odit dolorum laborum ipsam deserunt?
+    Omnis impedit, mollitia earum fugiat consectetur, beatae ea voluptas 
+    aliquid, enim laboriosam placeat ut soluta doloribus! Lorem ipsum 
+    dolor, sit amet consectetur adipisicing elit. Possimus fugiat illo ea! 
+    Quisquam consequuntur eum nam, fugiat iusto est cum molestiae blanditiis 
+    impedit! Nihil voluptates iste aperiam eius velit itaque. Lorem ipsum 
+    dolor sit amet, consectetur adipisicing elit. Quia, voluptates! Ipsam 
+    ullam quod expedita eum cupiditate dolorum, aperiam optio magni beatae 
+    fuga perspiciatis, delectus molestiae nam, sed asperiores impedit. 
+    Temporibus?&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+    Et minus qui fugiat nesciunt magnam aliquam repudiandae delectus 
+    iste neque temporibus odit possimus optio maiores, aliquid velit, 
+    voluptate vel nihil animi. Lorem ipsum dolor sit amet consectetur 
+    adipisicing elit. Necessitatibus odit dolorum laborum ipsam deserunt? 
+    Omnis impedit, mollitia earum fugiat consectetur, beatae ea voluptas 
+    aliquid, enim laboriosam placeat ut soluta doloribus! Lorem ipsum 
+    dolor, sit amet consectetur adipisicing elit. Possimus fugiat illo ea! 
+    Quisquam consequuntur eum nam, fugiat iusto est cum molestiae blanditiis 
+    impedit! Nihil voluptates iste aperiam eius velit itaque. Lorem ipsum 
+    dolor sit amet, consectetur adipisicing elit. Quia, voluptates! Ipsam 
+    ullam quod expedita eum cupiditate dolorum, aperiam optio magni beatae 
+    fuga perspiciatis, delectus molestiae nam, sed asperiores impedit. 
+    Temporibus?&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+    Et minus qui fugiat nesciunt magnam aliquam repudiandae delectus iste 
+    neque temporibus odit possimus optio maiores, aliquid velit, voluptate 
+    vel nihil animi. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Necessitatibus odit dolorum laborum ipsam deserunt? Omnis impedit, 
+    mollitia earum fugiat consectetur, beatae ea voluptas aliquid, enim 
+    laboriosam placeat ut soluta doloribus! Lorem ipsum dolor, sit amet 
+    consectetur adipisicing elit. Possimus fugiat illo ea! Quisquam 
+    consequuntur eum nam, fugiat iusto est cum molestiae blanditiis i
+    mpedit! Nihil voluptates iste aperiam eius velit itaque. Lorem ipsum 
+    dolor sit amet, consectetur adipisicing elit. Quia, voluptates! 
+    Ipsam ullam quod expedita eum cupiditate dolorum, aperiam optio magni 
+    beatae fuga perspiciatis, delectus molestiae nam, sed asperiores 
+    impedit. Temporibus?&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+    Et minus qui fugiat nesciunt magnam aliquam repudiandae delectus 
+    iste neque temporibus odit possimus optio maiores, aliquid velit, 
+    voluptate vel nihil animi. Lorem ipsum dolor sit amet consectetur 
+    adipisicing elit. Necessitatibus odit dolorum laborum ipsam deserunt? 
+    Omnis impedit, mollitia earum fugiat consectetur, beatae ea voluptas 
+    aliquid, enim laboriosam placeat ut soluta doloribus! Lorem ipsum 
+    dolor, sit amet consectetur adipisicing elit. Possimus fugiat illo 
+    ea! Quisquam consequuntur eum nam, fugiat iusto est cum molestiae 
+    blanditiis impedit! Nihil voluptates iste aperiam eius velit itaque. 
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, 
+    voluptates! Ipsam ullam quod expedita eum cupiditate dolorum, 
+    aperiam optio magni beatae fuga perspiciatis, delectus molestiae 
+    nam, sed asperiores impedit. Temporibus?&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+    Et minus qui fugiat nesciunt magnam aliquam repudiandae delectus 
+    iste neque temporibus odit possimus optio maiores, aliquid velit, 
+    voluptate vel nihil animi. Lorem ipsum dolor sit amet consectetur 
+    adipisicing elit. Necessitatibus odit dolorum laborum ipsam deserunt? 
+    Omnis impedit, mollitia earum fugiat consectetur, beatae ea voluptas 
+    aliquid, enim laboriosam placeat ut soluta doloribus! Lorem ipsum 
+    dolor, sit amet consectetur adipisicing elit. Possimus fugiat illo 
+    ea! Quisquam consequuntur eum nam, fugiat iusto est cum molestiae 
+    blanditiis impedit! Nihil voluptates iste aperiam eius velit itaque. 
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, 
+    voluptates! Ipsam ullam quod expedita eum cupiditate dolorum, 
+    aperiam optio magni beatae fuga perspiciatis, delectus molestiae nam, 
+    sed asperiores impedit. Temporibus?&lt;/p&gt;
+&lt;/body&gt;
+                        </code>
+                    </pre>
+                    <div class="d-flex flex-row-reverse align-items-center my-2">
+                        <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex023/tabela02.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tabela05-tab-pane" role="tabpanel" aria-labelledby="tabela05-tab" tabindex="0">
+                    <pre>
+                        <code id="codigo11.4">
+&lt;style&gt;
+        table{
+            width: 400px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td, th {
+            border: 1px solid black;
+        }
+
+        col#col1 {
+            background-color: rebeccapurple;
+        }
+
+        col#col2col3 {
+            background-color: bisque;
+        }
+
+        col#col4 {
+            background-color: rgb(178, 144, 94);
+        }
+    &lt;/style&gt;
+&lt;body&gt;
+    &lt;h1&gt;Tabelada&lt;/h1&gt;
+    &lt;table&gt;
+        &lt;colgroup&gt;
+            &lt;col id="col1"&gt;
+            &lt;col id="col2col3" span="2"&gt;
+            &lt;col id="col4"&gt;
+        &lt;/colgroup&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Nome&lt;/th&gt;
+            &lt;th&gt;Sexo&lt;/th&gt;
+            &lt;th&gt;Idade&lt;/th&gt;
+            &lt;th&gt;Profissão&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Maria&lt;/td&gt;
+            &lt;td&gt;F&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+            &lt;td&gt;Caixa&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;José&lt;/td&gt;
+            &lt;td&gt;M&lt;/td&gt;
+            &lt;td&gt;29&lt;/td&gt;
+            &lt;td&gt;Capineiro&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Pedro&lt;/td&gt;
+            &lt;td&gt;M&lt;/td&gt;
+            &lt;td&gt;31&lt;/td&gt;
+            &lt;td&gt;Mineiro&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Bia&lt;/td&gt;
+            &lt;td&gt;F&lt;/td&gt;
+            &lt;td&gt;76&lt;/td&gt;
+            &lt;td&gt;Programadora&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Laura&lt;/td&gt;
+            &lt;td&gt;F&lt;/td&gt;
+            &lt;td&gt;47&lt;/td&gt;
+            &lt;td&gt;Loka&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+                        </code>
+                    </pre>
+                    <div class="d-flex flex-row-reverse align-items-center my-2">
+                        <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex023/tabela5.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+ 
+        <!-- <div class="conteinter caixacodigo text-light">
+            <h3 class="display-6">Fontes externas</h3>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="-tab" data-bs-toggle="tab" data-bs-target="#-tab-pane" type="button" role="tab" aria-controls="-tab-pane" aria-selected="true"></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="-tab" data-bs-toggle="tab" data-bs-target="#-tab-pane" type="button" role="tab" aria-controls="-tab-pane" aria-selected="false"></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="-tab" data-bs-toggle="tab" data-bs-target="#-tab-pane" type="button" role="tab" aria-controls="-tab-pane" aria-selected="false"></button>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="-tab-pane" role="tabpanel" aria-labelledby="-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="-tab-pane" role="tabpanel" aria-labelledby="-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="-tab-pane" role="tabpanel" aria-labelledby="-tab" tabindex="0">...</div>
+              </div>
+        </div> -->
+
+    </main>
+
+    <footer class="m-0">
+        <p class="p-1 text-center m-0">Site desenvolvido por Crysnanth</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c1ea196d9b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.getElementById("copy1").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire( 
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy2").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo2");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy3").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo3");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy3").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo3.1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy3").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo3.2");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy4").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo4");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy4").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo4.1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy4").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo4.2");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy4").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo4.3");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy5").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo5");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy5").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo5.1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy6").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo6");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy6").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo6.1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy7").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo7");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy7").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo7.1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy8").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo8");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy8").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo8.1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy8").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo8.2");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy9").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo9");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy9").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo9.1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy10").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo10");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy10").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo10.1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy10").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo10.2");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy10").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo10.3");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy10").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo10.4");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy10").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo10.5");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy11").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo11");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy11").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo11.1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy11").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo11.2");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy11").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo11.3");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy11").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo11.4");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy11").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo11.5");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+</body>
+</html>

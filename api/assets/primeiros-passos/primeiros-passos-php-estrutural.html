@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/style-php.css">
+    <title>Primeiros passos PHP</title>
+    <style>
+
+        @media screen and (max-width: 500px) {
+            #verticallinks {
+                display: none;
+            }
+
+            header {
+                position: sticky;
+                top: 0;
+                min-width: 300px;
+            }
+
+            main {
+                min-width: 300px;
+            }
+
+            footer {
+                min-width: 300px;
+            }
+        }
+
+        @media screen and (min-width: 500px) and (max-width: 768px) {
+            #verticallinks {
+                display: none;
+            }
+
+            main {
+                min-width: 450px;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            #horizontallinks {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+<body class="h-100" style="background-color: #313131;">
+
+    <header class="text-white text-center p-2 mb-3 d-flex" style="position: sticky; top: 0; background-color: #8993C1;">
+        <a class="align-self-center text-white" href="../../php.php" style="font-size: 30px;"><i class="fa-solid fa-backward"></i></a>
+        <h1 class="display-4 m-auto">Começando a Codificar</h1>
+        <div class="nav-item dropdown text-light p-2" id="horizontallinks">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+                <li>
+                    <a class="dropdown-item" href="#primeirosite">Arrys</a>
+                </li>
+                    <li>
+                    <a class="dropdown-item" href="#avancando">Foreach</a>
+                </li>
+                    <li>
+                    <a class="dropdown-item" href="#imagenssites">For e While</a>
+                </li>
+                    <li>
+                    <a class="dropdown-item" href="#favicon">If's</a>
+                </li>
+                    <li>
+                    <a class="dropdown-item" href="#titulos">Strings</a>
+                </li>
+                    <li>
+                    <a class="dropdown-item" href="#formata">Funções</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div id="verticallinks" class="p-2 position-fixed">
+        <h4 class="text-light border-bottom p-1">Nesta página</h4>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#primeirosestilos">Arrays</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#estilosinter">Foreach</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#estilosexter">For e While</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#variosestilos">If's</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#fontesdiferentes">Strings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#fontesexter">Funções</a>
+            </li>
+          </ul>
+    </div>
+
+    <main class="m-auto w-50 text-white">
+        <div class="container-fluid">
+            <h2 class="titulocaixa bg-white text-black display-6 m-0 p-2 border border-secondary rounded-top-1" id="primeirosestilos">Arrays</h2>
+            <div class="sub bg-white text-black p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy1" class="rounded-2 p-1 text-black">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo bg-white p-2 text-black rounded-bottom-1 border border-secondary">
+                <pre>
+                    <code id="codigo1">
+    &lt;?php 
+        $lista = [];
+        
+        for ($i = 0; $i &lt;= 50; $i += 5)
+        {
+            $lista[] = $i;
+        }
+
+        print_r($lista);
+    ?&gt;
+                    </code>
+                </pre>
+                <div class="d-flex flex-row-reverse align-items-center my-2">
+                    <a class="linkexe border border-success rounded-3 p-2" href="#array" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa bg-white text-black display-6 m-0 p-2 border border-secondary rounded-top-1" id="estilosinter">Foreach</h2>
+            <div class="sub bg-white text-black p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy2" class="rounded-2 p-1 text-black">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo bg-white text-black p-2 rounded-bottom-1 border border-secondary">
+                <pre>
+                    <code id="codigo2">
+    &lt;php
+        $lista = [];
+            
+        for ($i = 0; $i &lt;= 50; $i += 5)
+        {
+            $lista[] = $i;
+        }
+
+        foreach ($litas as $chave => $valor)
+        {
+            echo "$chave => $valor";
+        }
+    ?&gt;
+                    </code>
+                </pre>
+                <div class="d-flex flex-row-reverse align-items-center my-2">
+                    <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex014/index.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa bg-white text-black display-6 m-0 p-2 border border-secondary rounded-top-1" id="estilosexter">For e While</h2>
+            <div class="sub bg-white text-black p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy3" class="rounded-2 p-1 bg-white text-black">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo bg-white text-black p-2 rounded-bottom-1 border border-secondary">
+                <ul class="nav nav-pills" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                    <button class="nav-link active text-info-emphasis" id="index-tab" data-bs-toggle="pill" data-bs-target="#index-tab-pane" type="button" role="tab" aria-controls="index-tab-pane" aria-selected="true">For</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                    <button class="nav-link text-info-emphasis" id="pagina2-tab" data-bs-toggle="pill" data-bs-target="#pagina2-tab-pane" type="button" role="tab" aria-controls="pagina2-tab-pane" aria-selected="false">While</button>
+                    </li>
+                </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="index-tab-pane" role="tabpanel" aria-labelledby="index-tab" tabindex="0">
+                    <pre>
+                        <code id="codigo3">
+    &lt;?php 
+        for ($i = 1; $i &lt; 6; $i++)
+        {
+            echo "Eu sou o número $i";
+        }
+    ?&gt;
+                        </code>
+                    </pre>
+                    <div class="d-flex flex-row-reverse align-items-center my-2">
+                        <a class="linkexe border border-success rounded-3 p-2" href="#foreach" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pagina2-tab-pane" role="tabpanel" aria-labelledby="pagina2-tab" tabindex="0">
+                    <pre class="p-1">
+                        <code id="codigo3.1">
+    &lt;?php
+        $i = 1;
+
+        while ($i &lt; 6)
+        {
+            echo "Eu sou o número $i";
+            $i++;
+        }
+    ?&gt;
+                        </code>
+                    </pre>
+                    <div class="d-flex flex-row-reverse align-items-center my-2">
+                        <a class="linkexe border border-success rounded-3 p-2" href="#foreach" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa bg-white text-black display-6 m-0 p-2 border border-secondary rounded-top-1" id="variosestilos">If, Elseif, Else</h2>
+            <div class="sub bg-white text-black p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy4" class="rounded-2 p-1 bg-white text-black">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo bg-white text-black p-2 rounded-bottom-1 border border-secondary">
+                <ul class="nav nav-pills" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active text-info-emphasis" id="cores01-tab" data-bs-toggle="pill" data-bs-target="#cores01-tab-pane" type="button" role="tab" aria-controls="cores01-tab-pane" aria-selected="true">If</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link text-info-emphasis" id="cores02-tab" data-bs-toggle="pill" data-bs-target="#cores02-tab-pane" type="button" role="tab" aria-controls="cores02-tab-pane" aria-selected="false">Elseif</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link text-info-emphasis" id="cores03-tab" data-bs-toggle="pill" data-bs-target="#cores03-tab-pane" type="button" role="tab" aria-controls="cores03-tab-pane" aria-selected="false">Else</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="cores01-tab-pane" role="tabpanel" aria-labelledby="cores01-tab" tabindex="0">
+                        <pre class="p-1">
+                            <code id="codigo4">
+    &lt;?php
+        $dia = false;
+        $tarde = false
+        $noite = true;
+
+        if ($dia)
+        {
+            echo "Bom dia!";
+        }
+
+        if ($tarde)
+        {
+            echo "Boa tarde!";
+        }
+
+        if ($noite)
+        {
+            echo "Boa noite!";
+        }
+    ?&gt;
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="#" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="cores02-tab-pane" role="tabpanel" aria-labelledby="cores02-tab" tabindex="0">
+                        <pre class="p-1">
+                            <code id="codigo4.1">
+    &lt;?php
+        $dia = false;
+        $tarde = false;
+        $noite = true;
+        
+        if ($dia)
+        {
+            echo "Bom dia!";
+        }
+        elseif ($tarde)
+        {
+            echo "Boa tarde!";
+        }
+        elseif ($noite)
+        {
+            echo "Boa noite!";
+        }
+    ?&gt;
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="#" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="cores03-tab-pane" role="tabpanel" aria-labelledby="cores03-tab" tabindex="0">
+                        <pre>
+                            <code id="codigo4.2">
+    &lt;?php
+        $dia = false;
+        $tarde = false;
+
+        if ($dia)
+        {
+            echo "Bom dia!";
+        }
+        elseif ($tarde)
+        {
+            echo "Boa tarde!";
+        }
+        else
+        {
+            echo "Boa noite!";
+        }
+    ?&gt;
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="#" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa bg-white text-black display-6 m-0 p-2 border border-secondary rounded-top-1" id="fontesdiferentes">Strings</h2>
+            <div class="sub bg-white text-black p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy5" class="rounded-2 p-1 bg-white text-black">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo bg-white text-black p-2 rounded-bottom-1 border border-secondary">
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="fonte01-tab-pane" role="tabpanel" aria-labelledby="fonte01-tab" tabindex="0">
+                        <pre class="p-1">
+                            <code id="codigo5">
+    &lt;?php
+        $nome = 'Crys';
+
+        echo "Oi $nome!"
+        echo 'Olá, ' . $nome;
+        echo "Opa {$nome}!";
+    ?&gt;
+                            </code>
+                          </pre>
+                          <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="#" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="titulocaixa bg-white text-black display-6 m-0 p-2 border border-secondary rounded-top-1" id="fontesexter">Funções</h2>
+            <div class="sub bg-white text-black p-1 border border-secondary d-flex justify-content-between align-items-center">
+                <h6 class="ti6 m-0">HTML</h6>
+                <button id="copy6" class="rounded-2 p-1 bg-white text-black">Copy <i class="fa-regular fa-clipboard"></i></button>
+            </div>
+            <div class="caixacodigo bg-white text-black p-2 rounded-bottom-1 border border-secondary">
+                <ul class="nav nav-pills" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active text-info-emphasis" id="fonte1-tab" data-bs-toggle="pill" data-bs-target="#fonte1-tab-pane" type="button" role="tab" aria-controls="fonte1-tab-pane" aria-selected="true">Sem parâmetro</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link text-info-emphasis" id="fonte2-tab" data-bs-toggle="pill" data-bs-target="#fonte2-tab-pane" type="button" role="tab" aria-controls="fonte2-tab-pane" aria-selected="false">Com parâmetro</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="fonte1-tab-pane" role="tabpanel" aria-labelledby="fonte1-tab" tabindex="0">
+                        <pre>
+                            <code class="codigo6">
+    &lt;?php
+        function conta_ate_cinco()
+        {
+            for ($i = 0; $i &lt; 6; $i++)
+            {
+                echo "$i ";
+            }
+        }
+
+        conta_ate_cinco();
+    ?&gt;
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="#" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="fonte2-tab-pane" role="tabpanel" aria-labelledby="fonte2-tab" tabindex="0">
+                        <pre class="p-1">
+                            <code id="codigo6.1">
+    &lt;?php
+        function conta($inicio, $fim)
+        {
+            for ($i = $inicio; $i &lt $fim + 1; $i++)
+            {
+                echo "$i ";
+            }
+        }
+
+        conta(1, 10);
+    ?&gt;
+                            </code>
+                        </pre>
+                        <div class="d-flex flex-row-reverse align-items-center my-2">
+                            <a class="linkexe border border-success rounded-3 p-2" href="#" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+ 
+        <!-- <div class="conteinter caixacodigo text-light">
+            <h3 class="display-6">Fontes externas</h3>
+            <ul class="nav nav-pills" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="-tab" data-bs-toggle="pill" data-bs-target="#-tab-pane" type="button" role="tab" aria-controls="-tab-pane" aria-selected="true"></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="-tab" data-bs-toggle="pill" data-bs-target="#-tab-pane" type="button" role="tab" aria-controls="-tab-pane" aria-selected="false"></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="-tab" data-bs-toggle="pill" data-bs-target="#-tab-pane" type="button" role="tab" aria-controls="-tab-pane" aria-selected="false"></button>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="-tab-pane" role="tabpanel" aria-labelledby="-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="-tab-pane" role="tabpanel" aria-labelledby="-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="-tab-pane" role="tabpanel" aria-labelledby="-tab" tabindex="0">...</div>
+              </div>
+        </div> -->
+    </main>
+
+    <footer class="m-0">
+        <p class="p-1 text-center m-0">Site desenvolvido por Crysnanth</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c1ea196d9b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.getElementById("copy1").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire( 
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy2").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo2");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy3").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo3");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy3").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo3.1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy3").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo3.2");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy4").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo4");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy4").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo4.1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy4").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo4.2");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy4").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo4.3");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy5").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo5");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy5").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo5.1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy6").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo6");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+    <script>
+        document.getElementById("copy6").addEventListener("click", function() {
+            var codigoElement = document.getElementById("codigo6.1");
+            var codigo = codigoElement.textContent || codigoElement.innerText;
+    
+            // Cria um elemento de textarea temporário para armazenar o código
+            var tempInput = document.createElement("textarea");
+            tempInput.value = codigo;
+    
+            // Adiciona o elemento ao corpo do documento
+            document.body.appendChild(tempInput);
+    
+            // Seleciona o texto do elemento
+            tempInput.select();
+    
+            // Copia o texto para a área de transferência do usuário
+            document.execCommand("copy");
+    
+            // Remove o elemento temporário
+            document.body.removeChild(tempInput);
+    
+            // Alerta o usuário que o código foi copiado
+            Swal.fire(
+            'Código copiado para a área de transferência!',
+            '',
+            'success'
+            )
+        });
+    </script>
+</body>
+</html>

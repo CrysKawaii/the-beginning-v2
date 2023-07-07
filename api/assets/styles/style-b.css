@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+:root {
+    --cor-01: #702CF4;
+    --cor-02: #212529;
+    --cor-03: #ADB5BD;
+    --cor-04: #1B1F22;
+    --cor-05: #2B3035;
+}
+
+/* ESTILO PARA PARTE DOS LINKS DE DIRECIONAMENTO */
+
+body {
+    height: 100vh;
+}
+
+header {
+    background-color: var(--cor-01);
+}
+
+header > div > p {
+    font-size: 150%;
+}
+
+main {
+    gap: 50px;
+}
+
+.quadrado {
+    width: 170px;
+    height: 150px;
+    padding: 20px;
+    font-size: 120%;
+    color: black;
+    transition-duration: 0.5s;
+}
+
+.quadrado:hover {
+    box-shadow: 0px 0px 10px white;
+    scale: 110%;
+}
+
+.botao {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+
+.botao > i{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--cor-03);
+    text-align: center;
+    line-height: 100px;
+    font-size: 3em;
+}
+
+.botao > a {
+    text-decoration: none;
+}
+
+.botao > a:hover {
+    text-decoration: underline;
+    
+}
+
+footer {
+    background-color: var(--cor-05);
+}
+
+footer > p {
+    color: var(--cor-03);
+}
+
+/* Estilo para site dos HTML */
+
+.header-pri {
+    position: sticky;
+    top: 0;
+}
+
+header > a {
+    font-size: 30px;
+    color: white;
+}
+
+#verticallinks {
+    overflow: auto;
+    width: 200px;
+}
+
+/* Estilo da barra de rolagem */
+#verticallinks::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Trilha da barra de rolagem */
+#verticallinks::-webkit-scrollbar-track {
+    background-color: var(--cor-03);
+}
+
+/* Preenchimento da barra de rolagem */
+#verticallinks::-webkit-scrollbar-thumb {
+    background-color: var(--cor-04);
+}
+
+/* Cor quando hover na barra de rolagem */
+#verticallinks::-webkit-scrollbar-thumb:hover {
+    background-color: var(--cor-05);
+}
+
+.nav-link {
+    color: lightgray;
+}
+
+.nav-link:hover {
+    border-left: 1px solid white;
+    color: white;
+}
+
+.titulocaixa {
+    background-color: var(--cor-04);
+    color: white;
+    border-bottom: 1px solid white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sub {
+    background-color: var(--cor-04);
+}
+
+.ti6 {
+    background-color: var(--cor-04);
+    color: var(--cor-03);
+}
+
+#copy1, #copy2, #copy3, #copy4, #copy5, #copy6, #copy7, #copy8, #copy9, #copy10, #copy11, #copy12, #copy13, #copy14, #copy15, #copy16, #copy17, #copy18, #copy19, #copy20, #copy21 {
+    border: none;
+    background-color: var(--cor-04);
+    color: rgb(255, 255, 255);
+}
+
+pre {
+    margin: 0px;
+}
+
+pre > code {
+    font-size: 90%;
+}
+
+.caixacodigo {
+    background-color: var(--cor-04);
+    margin-bottom: 10px;
+}
+
+.linkexe {
+    text-decoration: none;
+    color: green;
+    transition-duration: 0.3s;
+}
+
+.linkexe:hover {
+    background-color: green;
+    color: white;
+}

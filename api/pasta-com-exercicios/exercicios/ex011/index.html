@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mídias</title>
+</head>
+<body>
+    <h1>Tipos diferentes de imagem</h1>
+    <p>A imagem a seguir se adapta aos diferentes tipos de telas que podem vir a aparecer</p>
+    <picture>
+        <source media="(max-width: 750px)" srcset="images/foto-p.png" type="image/png">
+        <source media="(max-width: 1050px)" srcset="images/foto-m.png" type="image/png">
+        <img src="images/foto-g.png" alt="Imagem de tamanho G">
+    </picture>
+    <h2>Reprodução de um áudio</h2>
+    <audio preload="metadata" src="sounds/Spirit Riders - Telecasted.mp3" controls></audio>
+</body>
+</html>

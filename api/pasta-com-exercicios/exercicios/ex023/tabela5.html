@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mais tabela</title>
+    <style>
+        table{
+            width: 400px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td, th {
+            border: 1px solid black;
+        }
+
+        col#col1 {
+            background-color: rebeccapurple;
+        }
+
+        col#col2col3 {
+            background-color: bisque;
+        }
+
+        col#col4 {
+            background-color: rgb(178, 144, 94);
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabelada</h1>
+    <table>
+        <colgroup>
+            <col id="col1">
+            <col id="col2col3" span="2">
+            <col id="col4">
+        </colgroup>
+        <tr>
+            <th>Nome</th>
+            <th>Sexo</th>
+            <th>Idade</th>
+            <th>Profissão</th>
+        </tr>
+        <tr>
+            <td>Maria</td>
+            <td>F</td>
+            <td>25</td>
+            <td>Caixa</td>
+        </tr>
+        <tr>
+            <td>José</td>
+            <td>M</td>
+            <td>29</td>
+            <td>Capineiro</td>
+        </tr>
+        <tr>
+            <td>Pedro</td>
+            <td>M</td>
+            <td>31</td>
+            <td>Mineiro</td>
+        </tr>
+        <tr>
+            <td>Bia</td>
+            <td>F</td>
+            <td>76</td>
+            <td>Programadora</td>
+        </tr>
+        <tr>
+            <td>Laura</td>
+            <td>F</td>
+            <td>47</td>
+            <td>Loka</td>
+        </tr>
+    </table>
+</body>
+</html>

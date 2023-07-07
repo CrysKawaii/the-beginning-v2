@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/styles/style-start.css">
+    <script src="https://kit.fontawesome.com/c1ea196d9b.js" crossorigin="anonymous"></script>
+    <title>Start</title>
+</head>
+<body>
+    <div id="overlay"></div>
+    <audio id="coin" src="assets/sounds/coin.wav"></audio>
+    <div class="position-absolute top-0 start-50 translate-middle-x">
+        <h1 class=" text-center text-warning display-1">The Beginning</h1>
+    </div>
+    <main class="position-absolute top-50 start-50 text-center translate-middle m-0">
+        <h2 class="display-3 text-bg-success p-3 m-5  rounded-2">Insira a Ficha</h2>
+        <a id="darkenLink" class="p-3 fs-4 rounded-3" href="#" onclick="tocaSom()">Inserir</a>
+    </main>
+    <script>
+        function tocaSom() {
+            let som = document.getElementById('coin');
+            // audio.volume = 0.7;
+            som.play();
+        }
+    </script>
+    <script>
+        
+        function fadeInOverlay() {
+            var overlay = document.getElementById("overlay");
+            overlay.style.opacity = 1;
+        }
+
+        function redirectUser() {
+            window.location.href = "choose.html"; // Substitua pela URL desejada
+        }
+
+        var darkenLink = document.getElementById("darkenLink");
+        darkenLink.addEventListener("click", function(event) {
+            event.preventDefault(); // Impede o comportamento padrão do link (navegar para outra página)
+            fadeInOverlay();
+  
+            var overlay = document.getElementById("overlay");
+            overlay.addEventListener("transitionend", redirectUser); // Redireciona o usuário após a conclusão da transição
+        });
+
+
+    </script>
+    <script>
+        var link = document.getElementById("darkenLink");
+
+        link.addEventListener("click", function() {
+            var totalBlinks = 5; // Defina aqui o número total de piscadas desejadas
+            var blinkCount = 0;
+
+            function blink() {
+                link.classList.add("blink");
+
+                setTimeout(function() {
+                    link.classList.remove("blink");
+
+                    blinkCount++;
+
+                    if (blinkCount < totalBlinks) {
+                        blink();
+                    }
+                }, 1000);
+            }
+
+            blink();
+        });
+    </script>
+</body>
+</html>

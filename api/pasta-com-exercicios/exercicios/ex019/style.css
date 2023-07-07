@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+body {
+    background-image: linear-gradient(to top, red, rgb(154, 57, 57));
+    background-attachment: fixed;
+}
+main {
+    background-color: white;
+    width: 600px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 3px rgba(155, 1, 1, 0.652);
+}
+
+h1 {
+    text-align: center;
+}
+
+h1#principal {
+    background-color: black;
+    color: white;
+}
+
+.partes {
+    background-color: rgba(128, 0, 128, 0.549);
+}
+
+.primeira {
+    color: brown;
+}
+
+.segunda {
+    color: cadetblue;
+}
+
+.terceira {
+    color: crimson;
+}

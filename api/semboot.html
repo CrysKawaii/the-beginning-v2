@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Sem boostrap</title>
+    <style>
+        @media screen and (min-width: 250px) and (max-width: 480px) {
+            header {
+                font-size: 76%;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            div#lista_de_projetos {
+                columns: 1;
+            }
+        }
+        @media screen and (max-width: 720px) {
+            body {
+                font-size: 60%;
+            }
+        }
+
+        header {
+            display: flex;
+        }
+
+        #seta {
+            position: absolute;
+        }
+
+        #textos_cabeca {
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="seta"><a href="choose.html"><img id="seta" src="https://i.pinimg.com/originals/69/f3/a1/69f3a1814bae7a531d75722d21498a77.png" alt="Imagem de Voltar"></a></div>
+        <div id="textos_cabeca">
+            <h1>The Beginning</h1>
+            <p>Apresentação e desenvolvimento da minha carreira Tech</p>
+        </div>
+    </header>
+    <main id="pagina_index">
+        <div id="lista_de_projetos">
+            <ul>
+                <li><a href="assets/primeiros-passos/primeiros-passos-css.html" target="_self" type="next">Primeiros passos HTML <span class="material-icons md-18">link</span></a></li>
+                <li><a href="assets/primeiros-passos/primeiros-passos-css.html" target="_self" type="next">Primeiros passos CSS <span class="material-icons md-18">link</span></a></li>
+                <li><a href="https://cryskawaii.github.io/projeto-perfil/" target="_blank" type="next">Mini perfil(teste de flexbox) <span class="material-icons md-18">open_in_new</span></a></li>
+                <li><a href="https://cryskawaii.github.io/apresenta-produto/" target="_blank" type="next">Apresentação de um produto <span class="material-icons md-18">open_in_new</span></a></li>
+                <br>
+                <li><a href="https://cryskawaii.github.io/projeto-summary/" target="_blank" type="next">Sumário <span class="material-icons md-18">open_in_new</span></a></li>
+                <li><a href="https://cryskawaii.github.io/mini-projeto/" target="_blank" type="next">Mini Projeto <span class="material-icons md-18">open_in_new</span></a></li>
+                <li><a href="https://cryskawaii.github.io/projeto-cordel/" target="_blank" type="next">Projeto Cordel <span class="material-icons md-18">open_in_new</span></a></li>
+                <li><a href="https://cryskawaii.github.io/projeto-login/" target="_blank" type="next">Tela de Login (Media Query) <span class="material-icons md-18">open_in_new</span></a></li>
+            </ul>
+        </div>
+    </main>
+    <footer id="peindex">
+        <p>Site desenvolvido por Crynanth</p>
+    </footer>
+</body>
+</html>

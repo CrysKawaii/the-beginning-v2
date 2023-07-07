@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+/* DECLARAÇÕES GERAIS */
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+
+            html, body {
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+
+            body {
+                background-color: #2f3dfe;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+
+            h1 {
+                color: white;
+                text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.345);
+                padding: 10px;
+            }
+/* DECLARAÇÕES PARA TELA NO MODO RETRATO */ 
+        @media screen and (orientation: portrait) {
+            body {
+                background-image: url(../images/cev-portrait.jpg);
+                background-position: center bottom;
+            }
+        }
+/* DELCARAÇÕES PARA TELA NO MODO PAISAGEM */
+        @media screen and (orientation: landscape) {
+            body {
+                background-image: url(../images/cev-landscape.jpg);
+                background-size: cover;
+                background-position: center bottom;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Mude a orientação do dispositivo</h1>
+</body>
+</html>

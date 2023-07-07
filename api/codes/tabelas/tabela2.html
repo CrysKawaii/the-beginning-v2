@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tebelas</title>
+    
+</head>
+<body>
+    <pre>
+        <code>
+&lt;style&gt;
+        table {
+            border-collapse: collapse;
+        }
+
+        tr#linha3 {
+            background-color: blanchedalmond;
+        }
+
+        td {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        td#dado2 {
+            background-color: aquamarine;
+        }
+
+        td#dado6 {
+            vertical-align: bottom;
+        }
+
+        td#dado8 {
+            text-align: right;
+        }
+    &lt;/style&gt;
+&lt;body&gt;
+    &lt;h1&gt;Tabelada&lt;/h1&gt;
+    <!--
+        Hierarquia:
+        TABLE -&gt; TABELA
+            TR -&gt; LINHA DA TABELA
+                TH -&gt; CABEÇALHO DA TABELA
+                TD -&gt; DADO DA TEBELA QUE FICA DENTRO DA LINHA
+    -->
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;td&gt;A1&lt;/td&gt;
+            &lt;td id="dado2"&gt;B1&lt;/td&gt;
+            &lt;td&gt;C1&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;A2&lt;/td&gt;
+            &lt;td&gt;B2&lt;/td&gt;
+            &lt;td id="dado6"&gt;C2&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr id="linha3"&gt;
+            &lt;td&gt;A3&lt;/td&gt;
+            &lt;td id="dado8"&gt;B3&lt;/td&gt;
+            &lt;td&gt;C3&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;A4&lt;/td&gt;
+            &lt;td&gt;B4&lt;/td&gt;
+            &lt;td&gt;C4&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+        </code>
+    </pre>
+</body>
+</html>
