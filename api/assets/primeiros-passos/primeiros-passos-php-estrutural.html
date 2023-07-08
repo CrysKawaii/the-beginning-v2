@@ -126,7 +126,7 @@
                     </code>
                 </pre>
                 <div class="d-flex flex-row-reverse align-items-center my-2">
-                    <a class="linkexe border border-success rounded-3 p-2" href="#array" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                    <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/php/exemplos/array.php" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
                 </div>
             </div>
         </div>
@@ -140,15 +140,15 @@
             <div class="caixacodigo bg-white text-black p-2 rounded-bottom-1 border border-secondary">
                 <pre>
                     <code id="codigo2">
-    &lt;php
+    &lt;?php
         $lista = [];
             
         for ($i = 0; $i &lt;= 50; $i += 5)
         {
-            $lista[] = $i;
+            $lista[] += $i;
         }
 
-        foreach ($litas as $chave => $valor)
+        foreach ($lista as $chave => $valor)
         {
             echo "$chave => $valor";
         }
@@ -156,7 +156,7 @@
                     </code>
                 </pre>
                 <div class="d-flex flex-row-reverse align-items-center my-2">
-                    <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/exercicios/ex014/index.html" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                    <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/php/exemplos/foreach.php" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
                 </div>
             </div>
         </div>
@@ -183,13 +183,13 @@
     &lt;?php 
         for ($i = 1; $i &lt; 6; $i++)
         {
-            echo "Eu sou o número $i";
+            echo "Eu sou o número $i&lt;/br>";
         }
     ?&gt;
                         </code>
                     </pre>
                     <div class="d-flex flex-row-reverse align-items-center my-2">
-                        <a class="linkexe border border-success rounded-3 p-2" href="#foreach" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/php/exemplos/for.php" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="pagina2-tab-pane" role="tabpanel" aria-labelledby="pagina2-tab" tabindex="0">
@@ -200,14 +200,14 @@
 
         while ($i &lt; 6)
         {
-            echo "Eu sou o número $i";
+            echo "Eu sou o número $i&lt;/br>";
             $i++;
         }
     ?&gt;
                         </code>
                     </pre>
                     <div class="d-flex flex-row-reverse align-items-center my-2">
-                        <a class="linkexe border border-success rounded-3 p-2" href="#foreach" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                        <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/php/exemplos/while.php" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
                     </div>
                 </div>
               </div>
@@ -259,7 +259,7 @@
                             </code>
                         </pre>
                         <div class="d-flex flex-row-reverse align-items-center my-2">
-                            <a class="linkexe border border-success rounded-3 p-2" href="#" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                            <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/php/exemplos/if.php" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="cores02-tab-pane" role="tabpanel" aria-labelledby="cores02-tab" tabindex="0">
@@ -286,7 +286,7 @@
                             </code>
                         </pre>
                         <div class="d-flex flex-row-reverse align-items-center my-2">
-                            <a class="linkexe border border-success rounded-3 p-2" href="#" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                            <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/php/exemplos/elseif.php" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="cores03-tab-pane" role="tabpanel" aria-labelledby="cores03-tab" tabindex="0">
@@ -312,7 +312,7 @@
                             </code>
                         </pre>
                         <div class="d-flex flex-row-reverse align-items-center my-2">
-                            <a class="linkexe border border-success rounded-3 p-2" href="#" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                            <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/php/exemplos/else.php" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
                         </div>
                     </div>
                 </div>
@@ -333,14 +333,14 @@
     &lt;?php
         $nome = 'Crys';
 
-        echo "Oi $nome!"
-        echo 'Olá, ' . $nome;
+        echo "Oi $nome!&lt;/br>";
+        echo 'Olá, ' . $nome . '&lt;/br>';
         echo "Opa {$nome}!";
     ?&gt;
                             </code>
                           </pre>
                           <div class="d-flex flex-row-reverse align-items-center my-2">
-                            <a class="linkexe border border-success rounded-3 p-2" href="#" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                            <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/php/exemplos/strings.php" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
                         </div>
                     </div>
                   </div>
@@ -364,8 +364,8 @@
                   </ul>
                   <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="fonte1-tab-pane" role="tabpanel" aria-labelledby="fonte1-tab" tabindex="0">
-                        <pre>
-                            <code class="codigo6">
+                        <pre class="p-1">
+                            <code id="codigo6">
     &lt;?php
         function conta_ate_cinco()
         {
@@ -380,7 +380,7 @@
                             </code>
                         </pre>
                         <div class="d-flex flex-row-reverse align-items-center my-2">
-                            <a class="linkexe border border-success rounded-3 p-2" href="#" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                            <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/php/exemplos/sempara.php" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="fonte2-tab-pane" role="tabpanel" aria-labelledby="fonte2-tab" tabindex="0">
@@ -400,7 +400,7 @@
                             </code>
                         </pre>
                         <div class="d-flex flex-row-reverse align-items-center my-2">
-                            <a class="linkexe border border-success rounded-3 p-2" href="#" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
+                            <a class="linkexe border border-success rounded-3 p-2" href="../../pasta-com-exercicios/php/exemplos/compara.php" target="_blank">Executar código <i class="p-2 fa-regular fa-circle-play"></i></a>
                         </div>
                     </div>
                   </div>
